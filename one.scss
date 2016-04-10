@@ -228,6 +228,7 @@ color: #fff;
     position: fixed;
     z-index: 999;
     /*
+        a N S E W cross might be more efficient? 
     -webkit-clip-path: polygon(10% 37%, 35% 37%, 35% 0%, 65% 0%, 65% 36%, 91% 36%, 91% 60%, 65% 60%, 65% 100%, 35% 100%, 35% 61%, 10% 61%);
     clip-path: polygon(10% 37%, 35% 37%, 35% 0%, 65% 0%, 65% 36%, 91% 36%, 91% 60%, 65% 60%, 65% 100%, 35% 100%, 35% 61%, 10% 61%);*/
 }
@@ -317,6 +318,7 @@ color: #fff;
 #longs,
 .content,
 .content h1,
+.content p,
 .L, .R { 
     transition: all 1.5s ease;
 }
@@ -377,3 +379,102 @@ color: #fff;
  }
 
 .bb-img img { width:100px;     opacity: 0.5; height:66.6785px}
+
+@import url(https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed|Open+Sans+Condensed:300|Yanone+Kaffeesatz|Abel|Pathway+Gothic+One|Ropa+Sans|Acme|News+Cycle|Merriweather+Sans);
+
+.north {
+    bottom : 10% !important;
+    right : calc((100% - 3%) / 2) !important
+}
+
+.south {
+    bottom : 5% !important;
+    right : calc((100% - 3%) / 2) !important 
+}
+
+.east {
+    bottom : 7% !important;
+    right : calc((100% - -4%) / 2) !important
+}
+
+.west {
+    bottom : 7% !important;
+    right : calc((100% - 10%) / 2) !important
+}
+
+.return {
+    bottom : 5% !important;
+    right : calc((100% - 3%) / 2) !important
+}
+
+
+        .fnt ul,
+        .bb-img ul {
+            width: 100%;
+            white-space: nowrap;
+            overflow: auto;
+            overflow-y: hidden;
+            overflow-x: hidden;
+            display: block;
+            float: left;
+        }
+
+        .bb-img,
+        .fnt {
+            z-index: 2147483647;
+            opacity: 1;
+            position: absolute;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.2) none repeat scroll 0% 0%;
+            height: 66.6785px;
+            top: 0px;
+            width: 80%;
+            margin: 0 10% !important;
+            overflow: hidden;
+        }
+
+
+
+        .fnt,
+        .fntR,
+        .fntL {
+            top: 68px !important;
+        }
+
+        .fnt ul li,
+        .bb-img ul li {
+            display: inline-block;
+            width: 100px;
+            height: 66.6785px;
+            margin: 0px;
+            position: relative;
+        }
+
+        .fnt ul li {
+            width: auto !important;
+            margin: 20px 50px;
+        }
+
+        .fntR,
+        .imgR {
+                position: fixed;
+            top:0px;
+            right:0px;
+            width:10%;
+            background-color: #fff;
+            z-index: 9999999;
+             height: 66.6785px;
+             opacity: 0.2;
+        }
+
+        .fntL,
+        .imgL {
+            position: fixed;
+            top:0px;
+            left:0px;
+            width:10%;
+            background-color: #fff;
+            z-index: 9999999;
+             height: 66.6785px; 
+              opacity: 0.2;
+        }
