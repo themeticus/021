@@ -1,4 +1,10 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed|Open+Sans+Condensed:300|Yanone+Kaffeesatz|Abel|Pathway+Gothic+One|Ropa+Sans|Acme|News+Cycle|Merriweather+Sans);
+body {
+  font-family: onelove, arial, helvetica;
+  color: #fff;
+  background: url(media/img/love-from-the-021-2-17.jpg) no-repeat transparent center;
+  background-size: cover; }
+
 * {
   *zoom: 1; }
   :before, :after {
@@ -6,15 +12,6 @@
     display: table; }
   :after {
     clear: both; }
-
-.wht {
-  color: #fff; }
-
-.blk {
-  color: #666; }
-
-.rng {
-  color: orange; }
 
 * {
   padding: 0;
@@ -38,12 +35,6 @@ h1 {
   src: url("media/fonts/1ove.ttf") format("ttf"), url("media/fonts/1ove.woff") format("woff"); }
 .slimScrollBar {
   background: #fff !important; }
-
-#superContainer {
-  height: 100%;
-  position: relative;
-  -ms-touch-action: none;
-  touch-action: none; }
 
 html.fp-enabled,
 .fp-enabled body {
@@ -98,10 +89,6 @@ html.fp-enabled,
 
 .fp-scrollable {
   overflow: scroll; }
-
-.fp-notransition {
-  -webkit-transition: none !important;
-  transition: none !important; }
 
 #fp-nav {
   display: none;
@@ -240,31 +227,27 @@ html.fp-enabled,
 #fp-nav ul li .fp-tooltip.left {
   left: 20px; }
 
-body {
-  font-family: onelove, arial, helvetica;
-  color: #fff;
-  background: url(media/img/love-from-the-021-2-17.jpg) no-repeat transparent center;
-  background-size: cover; }
-
 #menu {
   position: fixed;
   bottom: 30px;
-  left: 0;
+  right: 0;
   height: 40px;
-  z-index: 70;
-  width: 250px; }
+  z-index: 70; }
   #menu li {
-    display: inline-block; }
+    display: block; }
     #menu li a {
       text-decoration: none;
       color: #fff;
       display: block;
-      text-align: center;
+      text-align: right;
       padding: 0 5px 0 10px; }
     #menu li.active a, #menu li.active a:hover {
       color: orange; }
     #menu li::hover {
       background-color: #7FDBFF; }
+
+b {
+  background-color: #000; }
 
 p a {
   color: #fff;
@@ -288,34 +271,12 @@ p a {
   width: 40%;
   float: left; }
 
-#one-love,
-#longs,
-#shorts,
-#sayings,
-#sharps,
-#thongs,
-#bongs {
-  position: fixed;
-  font-size: 1.2em;
-  width: auto;
-  right: 0px;
-  background: rgba(0, 0, 0, 0.5) none repeat scroll 0% 0%; }
-
-#longs:hover,
-#one-love:hover,
-#shorts:hover,
-#sayings:hover,
-#sharps:hover,
-#longs:hover {
+#menu a:hover {
   background-color: #7FDBFF !important;
-  opacity: 0.9; }
+  opacity: 0.9;
+  transition: 2s ease; }
 
-#fp-nav,
-#longs,
-#sayings,
-#shorts,
-#sharps,
-#one-love {
+#fp-nav {
   top: 0px; }
 
 #actions a {
@@ -436,6 +397,7 @@ p a {
 .blue {
   background-color: #7FDBFF !important; }
 
+ul,
 #one-love,
 #shorts,
 #sayings,
@@ -444,7 +406,9 @@ p a {
 .content,
 .content h1,
 .content p,
-.L, .R {
+.content a,
+.L, .R,
+#menu a {
   transition: all 1.5s ease; }
 
 body {
@@ -527,6 +491,16 @@ body {
   overflow-x: hidden;
   display: block;
   float: left; }
+
+.fnt li:hover {
+  opacity: 0.5;
+  color: orange;
+  transition: all 0.5s ease;
+  cursor: pointer; }
+
+.fnt ul li {
+  width: auto !important;
+  height: 68.6666px; }
 
 .bb-img,
 .fnt {
