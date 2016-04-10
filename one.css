@@ -397,6 +397,7 @@ p a {
 .blue {
   background-color: #7FDBFF !important; }
 
+ul,
 #one-love,
 #shorts,
 #sayings,
@@ -405,7 +406,9 @@ p a {
 .content,
 .content h1,
 .content p,
-.L, .R {
+.content a,
+.L, .R,
+#menu a {
   transition: all 1.5s ease; }
 
 body {
@@ -488,6 +491,16 @@ body {
   overflow-x: hidden;
   display: block;
   float: left; }
+
+.fnt li:hover {
+  opacity: 0.5;
+  color: orange;
+  transition: all 0.5s ease;
+  cursor: pointer; }
+
+.fnt ul li {
+  width: auto !important;
+  height: 68.6666px; }
 
 .bb-img,
 .fnt {

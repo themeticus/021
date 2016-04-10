@@ -1,4 +1,8 @@
 
+     $('#cntrl-fnt > div').hide();
+
+    $('#cntrl-bg > div').hide();
+
 /**
 *  Update background noise 
 */
@@ -25,7 +29,7 @@ for (var i = 0; i < current_fonts.length; i++) {
 }
 
 function changeFontFamily(fontref) {  
-  $('h1, p, em, pre, i, b, strong, .content a, #menu a').css('font-family', fontref.innerHTML);
+  $('h1, p, em, pre, i, b, strong, .content a, #menu a').css({'font-family' : fontref.innerHTML})
 }
 
 
@@ -90,7 +94,6 @@ document.addEventListener('mouseout', function(e) {
 */
 document.addEventListener('DOMContentLoaded', function() {
 
-    $('#cntrl-fnt > div, #cntrl-bg > div').hide();
 
     function initialization(){
         $('#onepage').fullpage({
