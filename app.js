@@ -65,13 +65,23 @@ $('#pad, #moveUp, #moveDown, .fp-prev, .fp-next').hover( function () {
 /**
 * Lazy settings
 */
+
 $(window).on('mousemove', function(e) {
     if ( e.pageY < 150 ) {
-        $('#cntrl-fnt > div').fadeIn();
-        $('#cntrl-bg > div').fadeIn();
+        $('#cntrl-fnt > div').fadeIn(2000);
+        $('#cntrl-bg > div').fadeIn(2000);
     } else {
         $('#cntrl-fnt > div').fadeOut(2000);
         $('#cntrl-bg > div').fadeOut(2000);
+    }
+});
+
+document.addEventListener('mouseout', function(e) {
+    e = e ? e : window.event;
+    var from = e.relatedTarget || e.toElement;
+    if (!from || from.nodeName == "HTML") {
+        $('#cntrl-fnt > div').fadeOut(1000);
+        $('#cntrl-bg > div').fadeOut(1000);
     }
 });
 
@@ -85,7 +95,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function initialization(){
         $('#onepage').fullpage({
         sectionsColor: ['transparent', 'transparent'],
-        anchors: ['021', 'stories'],  
+        anchors: ['love', 'stories'],  
         animateAnchor:true,
         scrollOverflow: true,            
         autoScrolling:true, 
@@ -98,8 +108,8 @@ document.addEventListener('DOMContentLoaded', function() {
         slidesNavPosition: 'bottom',
         continuousVertical:true,     
         afterLoad: function(anchorLink, index){
-            $('#menu li').css('border-bottom', "2px solid transparent");          
-            $('#'+anchorLink).css('border-bottom', "2px solid #7FDBFF");   
+            $('#menu li').css({'border-bottom' : "2px solid transparent", "transition" : "all 1s ease"});          
+            $('#'+anchorLink).css({'border-bottom' : "2px solid #7FDBFF", "transition" : "all 1s ease"});   
         }
         });
     }
