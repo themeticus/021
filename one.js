@@ -2127,6 +2127,7 @@ b){a.originalEvent.touches.length&&(A=a.originalEvent.touches[0].pageY)});b.bind
         /**
         * Creates a landscape navigation bar with dots for horizontal sliders.
         */
+
         function addSlidesNavigation(section, numSlides){
             section.append('<div class="hori-indi"><div class="L"></div><div class="indi-dots ' + SLIDES_NAV + '"><ul></ul></div><div class="R"></div></div>');
             var nav = section.find(SLIDES_NAV_SEL);
@@ -2134,14 +2135,16 @@ b){a.originalEvent.touches.length&&(A=a.originalEvent.touches[0].pageY)});b.bind
             //top or bottom
             nav.addClass(options.slidesNavPosition);
 
-            for(var i=0; i< numSlides; i++){
-                nav.find('ul').append('<li><a href="#"><span></span></a></li>');
+	        for(var i=0; i< numSlides; i++){
+
+                nav.find('ul').append('<li><a href="#" id="'+i+'" ><span></span></a></li>');
             }
 
             //centering it
             nav.css('margin-left', '-' + (nav.width()/2) + 'px');
 
             nav.find('li').first().find('a').addClass(ACTIVE);
+
         }
 
 

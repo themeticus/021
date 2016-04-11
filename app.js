@@ -1,8 +1,3 @@
-
-     $('#cntrl-fnt > div').show();
-
-    $('#cntrl-bg > div').show();
-
 /**
 *  Update background noise 
 */
@@ -66,9 +61,12 @@ $('#pad, #moveUp, #moveDown, .fp-prev, .fp-next').hover( function () {
    $('#moveUp, #moveDown, .fp-prev, .fp-next').css({'bottom':'5%', 'right':'calc((100% - 3% )/ 2)'});
 });  
 
+
 /**
 * Lazy settings
 */
+
+$('#cntrl-fnt > div, .quickSee, #cntrl-bg > div').hide();
 
 $("#stories").draggable();
 $("#love").droppable({
@@ -106,7 +104,7 @@ document.addEventListener('DOMContentLoaded', function() {
         anchors: ['love', 'stories'],  
         animateAnchor:true,
         scrollOverflow: true,            
-        autoScrolling:true, 
+        //autoScrolling:true, 
         fitSection: true,
         menu: '#menu',
         navigation: true,
@@ -114,15 +112,29 @@ document.addEventListener('DOMContentLoaded', function() {
         css3: true,
         slidesNavigation: true,
         slidesNavPosition: 'bottom',
-        continuousVertical:true,     
+        //showActiveTooltip: true,
+        continuousVertical:false,     
         afterLoad: function(anchorLink, index){
             $('#menu li').css({'border-bottom' : "2px solid transparent", "transition" : "all 1s ease"});          
-            $('#'+anchorLink).css({'border-bottom' : "2px solid #7FDBFF", "transition" : "all 1s ease"});   
-        }
+            $('#'+anchorLink).css({'border-bottom' : "2px solid #7FDBFF", "transition" : "all 1s ease"});  
+            }
         });
     }
 
     initialization();  
+
+    /* mini preview, maybe make clickable? */ 
+    $('#woordtjies div.hori-indi ul > li > a').hover( function() {
+        $('.quickSee').show();
+        var preview = this.getAttribute('id');
+        var bemoer = parseInt(preview) + 1;
+        var minipreview = $('#woordtjies .slide:nth-child('+bemoer.toString()+')');        
+        var titlepreview = minipreview.find('h1').text();
+        var storypreview = minipreview.find('p').text();
+        $('.quickSee').html("<h2>" + titlepreview + "</h2><br/>" + storypreview +"")        
+    }, function() {
+        $('.quickSee').hide()
+    });    
 
 	var $storytainer = $('.indi-dots ul'),   
     droll = 10000;   

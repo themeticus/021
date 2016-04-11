@@ -326,11 +326,7 @@ body {
     display: block;
     float: left;       
 }
-.L:hover,
-.R:hover {
-    background: orange none repeat scroll 0% 0%;
-    opacity: 0.1;
-}
+
 .L,.R {   
     height: 28px;
     bottom: 0px;
@@ -531,3 +527,10 @@ body {
     -webkit-transform: scale(1.0);
   }
 }    
+
+.quickSee {
+    position: absolute;
+    bottom: 29px;
+    background: rgba(0, 0, 0, 0.2) none repeat scroll 0% 0%;
+    padding: 20px;
+}
