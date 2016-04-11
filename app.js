@@ -1,7 +1,7 @@
 
-     $('#cntrl-fnt > div').hide();
+     $('#cntrl-fnt > div').show();
 
-    $('#cntrl-bg > div').hide();
+    $('#cntrl-bg > div').show();
 
 /**
 *  Update background noise 
@@ -94,7 +94,6 @@ document.addEventListener('mouseout', function(e) {
 */
 document.addEventListener('DOMContentLoaded', function() {
 
-
     function initialization(){
         $('#onepage').fullpage({
         sectionsColor: ['transparent', 'transparent'],
@@ -182,6 +181,8 @@ document.addEventListener('DOMContentLoaded', function() {
         $fftainer.stop();
     });    
 
-    /* please don't duplicate like this naaier */     
+    /* please don't duplicate like this naaier */  
+
+    document.querySelector('#loading').style.display='none';   
 
 });
