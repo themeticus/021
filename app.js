@@ -1,6 +1,3 @@
-
-
-
 /**
 *  Update background noise 
 */
@@ -53,10 +50,6 @@ function onFormation() {
 /** 
 * Lazy gepoesteray
 */
-
-
-
-
 $('#pad, #moveUp, #moveDown, .fp-prev, .fp-next').hover( function () {
     onFormation();
 }, function() {
@@ -68,12 +61,12 @@ $('#pad, #moveUp, #moveDown, .fp-prev, .fp-next').hover( function () {
    $('#moveUp, #moveDown, .fp-prev, .fp-next').css({'bottom':'5%', 'right':'calc((100% - 3% )/ 2)'});
 });  
 
+
 /**
 * Lazy settings
 */
 
-$('#cntrl-fnt > div').hide();
-$('#cntrl-bg > div').hide();
+$('#cntrl-fnt > div, .quickSee, #cntrl-bg > div').hide();
 
 $("#stories").draggable();
 $("#love").droppable({
