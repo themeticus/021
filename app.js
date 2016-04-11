@@ -70,14 +70,20 @@ $('#pad, #moveUp, #moveDown, .fp-prev, .fp-next').hover( function () {
 * Lazy settings
 */
 
-$(window).on('mousemove', function(e) {
-    if ( e.pageY < 150 ) {
-        $('#cntrl-fnt > div').fadeIn(2000);
-        $('#cntrl-bg > div').fadeIn(2000);
-    } else {
-        $('#cntrl-fnt > div').fadeOut(2000);
-        $('#cntrl-bg > div').fadeOut(2000);
-    }
+$("#stories").draggable();
+$("#love").droppable({
+  drop: function( event, ui ) {
+    $('#cntrl-fnt > div').fadeIn(2000);
+    $('#cntrl-bg > div').fadeIn(2000);
+  }
+});
+
+$('#user-cntrl').on('mouseenter', function(e) {
+    $('#cntrl-fnt > div').fadeIn(2000);
+    $('#cntrl-bg > div').fadeIn(2000);
+}).on('mouseleave', function(e) {
+    $('#cntrl-fnt > div').fadeOut(2000);
+    $('#cntrl-bg > div').fadeOut(2000);
 });
 
 document.addEventListener('mouseout', function(e) {
