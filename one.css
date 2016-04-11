@@ -616,5 +616,10 @@ body {
   50% {
     transform: scale(1);
     -webkit-transform: scale(1); } }
+.quickSee {
+  position: absolute;
+  bottom: 29px;
+  background: rgba(0, 0, 0, 0.2) none repeat scroll 0% 0%;
+  padding: 20px; }
 
 /*# sourceMappingURL=one.css.map */
