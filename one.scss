@@ -1,15 +1,11 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed|Open+Sans+Condensed:300|Yanone+Kaffeesatz|Abel|Pathway+Gothic+One|Ropa+Sans|Acme|News+Cycle|Merriweather+Sans);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans|PT+Sans|Droid+Sans|Open+Sans+Condensed:300|Ubuntu|Raleway|Source+Sans+Pro|Montserrat|Roboto+Condensed|Oswald|Dosis|Oxygen|Yanone+Kaffeesatz|Josefin+Sans|Archivo+Narrow|Quicksand|Francois+One|Rubik|PT+Sans+Narrow|Signika);
 body { font-family: onelove, arial, helvetica; color: #fff; background: url(media/img/love-from-the-021-2-17.jpg) no-repeat transparent center;     background-size: cover}
 $img-path:'media/img/love-from-the-021-2-';
 $img-root:'media/img/';
 $white:#fff;
 $black:transparent;
 $orange:orange;
-
-@function calculateRem($size) {
-  $remSize: $size / 16px;
-  @return $remSize * 1rem;
-}
 
 @mixin font-size($size) {
   font-size: $size;
@@ -354,7 +350,8 @@ body {
   @extend %clearfix; 
  }
 
-.bb-img img { width:100px;     opacity: 0.5; height:66.6785px}
+.bb-img img { width:100px;     opacity: 0.5; height:66.6785px;     cursor: pointer;}
+.bb-img img:hover { opacity: 1;}
 
 .north {
     bottom : 10% !important;
@@ -382,84 +379,155 @@ body {
 }
 
 
-        .fnt ul,
-        .bb-img ul {
-            width: 100%;
-            white-space: nowrap;
-            overflow: auto;
-            overflow-y: hidden;
-            overflow-x: hidden;
-            display: block;
-            float: left;
-        }
+    .fnt ul,
+    .bb-img ul {
+        width: 100%;
+        white-space: nowrap;
+        overflow: auto;
+        overflow-y: hidden;
+        overflow-x: hidden;
+        display: block;
+        float: left;
+    }
 
-.fnt li:hover {
-    opacity: 0.5;
-    color: orange;
-    transition: all 0.5s ease;
-    cursor: pointer;
-}
-.fnt ul li {
-    width: auto !important;
-    height: 68.6666px;
-}        
+    .fnt li:hover {
+        opacity: 0.5;
+        color: orange;
+        transition: all 0.5s ease;
+        cursor: pointer;
+    }
 
-        .bb-img,
-        .fnt {
-            z-index: 2147483647;
-            opacity: 1;
-            position: absolute;
-            text-align: center;
-            background: rgba(0, 0, 0, 0.2) none repeat scroll 0% 0%;
-            height: 66.6785px;
-            top: 0px;
-            width: 80%;
-            margin: 0 10% !important;
-            overflow: hidden;
-        }
+    .fnt {
+        z-index: 999998;
+        opacity: 1;
+        position: absolute;
+        text-align: center;
+        background: rgba(0, 0, 0, 0.2) none repeat scroll 0% 0%;
+        top: 0px;
+        width: 80%;
+        overflow: hidden;
+        margin: 0 10% !important;
+    }
 
 
 
-        .fnt,
-        .fntR,
-        .fntL {
-            top: 68px !important;
-        }
+    .bb-img {
+        z-index: 999999;
+        opacity: 1;
+        position: absolute;
+        text-align: center;
+        background: rgba(0, 0, 0, 0.2) none repeat scroll 0% 0%;
+        height: 66.6785px;
+        top: 0px;
+        width: 80%;
+        margin: 0 10% !important;
+        overflow: hidden;
+    }
 
-        .fnt ul li,
-        .bb-img ul li {
-            display: inline-block;
-            width: 100px;
-            height: 66.6785px;
-            margin: 0px;
-            position: relative;
-        }
 
-        .fnt ul li {
-            width: auto !important;
-            margin: 20px 50px;
-        }
 
-        .fntR,
-        .imgR {
-                position: fixed;
-            top:0px;
-            right:0px;
-            width:10%;
-            background-color: #fff;
-            z-index: 9999999;
-             height: 66.6785px;
-             opacity: 0.2;
-        }
+    .fnt,
+    .fntR,
+    .fntL {
+        top: 68px !important;
+    }
 
-        .fntL,
-        .imgL {
+ 
+    .bb-img ul li {
+        display: inline-block;
+        width: 100px;
+        height: 66.6785px;
+        margin: 0px;
+        position: relative;
+    }
+
+    .fnt ul li {
+        width: auto;
+        padding: 10px 20px;
+        display: inline-block;
+        margin: 0px;
+        position: relative
+    }        
+
+
+    .fntR,
+    .imgR {
             position: fixed;
-            top:0px;
-            left:0px;
-            width:10%;
-            background-color: #fff;
-            z-index: 9999999;
-             height: 66.6785px; 
-              opacity: 0.2;
-        }
+        top:0px;
+        right:0px;
+        width:10%;
+        background-color: #fff;
+        z-index: 9899999;             
+         opacity: 0.2;
+    }
+
+    .fntL,
+    .imgL {
+        position: fixed;
+        top:0px;
+        left:0px;
+        width:10%;
+        background-color: #fff;
+        z-index: 9899999;             
+        opacity: 0.2;
+    }
+
+.imgR,
+.imgL {
+    height: 66.6785px;
+}
+
+.fntR,
+.fntL {
+    height: 42px;
+}
+
+#loading {
+    background-color: #2c3e50;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999999;
+}
+.spinner {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  margin: 25% auto;
+}
+
+.double-bounce1, .double-bounce2 {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #fff;
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  left: 0;
+  
+  -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+  animation: sk-bounce 2.0s infinite ease-in-out;
+}
+
+.double-bounce2 {
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+
+@-webkit-keyframes sk-bounce {
+  0%, 100% { -webkit-transform: scale(0.0) }
+  50% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes sk-bounce {
+  0%, 100% { 
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+  } 50% { 
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+  }
+}    
