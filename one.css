@@ -551,7 +551,7 @@ body {
   top: 0px;
   right: 0px;
   width: 10%;
-  background-color: #fff;
+  background-color: #000;
   z-index: 9899999;
   opacity: 0.2; }
 
@@ -561,7 +561,7 @@ body {
   top: 0px;
   left: 0px;
   width: 10%;
-  background-color: #fff;
+  background-color: #000;
   z-index: 9899999;
   opacity: 0.2; }
 
@@ -571,7 +571,7 @@ body {
 
 .fntR,
 .fntL {
-  height: 42px; }
+  height: 44px; }
 
 #loading {
   background-color: #2c3e50;
