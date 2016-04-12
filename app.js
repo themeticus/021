@@ -85,6 +85,13 @@ $("#biggie").droppable({
   }
 });
 
+$('.indi-dots ul').on('mouseenter', function (e) {
+    console.log('beep');
+    $('.indi-dots ul').css('opacity', '1 !important')
+}).on('mouseleave', function(e) {
+    $('.indi-dots ul').css('opacity', '0.2 !important')
+});
+
 $('#user-cntrl').on('mouseenter', function(e) {
     $('#cntrl-fnt > div, #cntrl-bg > div').fadeIn(2000);
 }).on('mouseleave', function(e) {
@@ -206,6 +213,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.querySelector('#loading').style.display='none';   
 
-    $("div.content, h1, p").resizable().draggable()
+    $("div.content, h1, p").draggable();
+
+    $("div.content").resizable({
+      resize: function( event, ui ) {
+        ui.size.height = Math.round( ui.size.height / 30 ) * 30;
+      }
+    });
+
+    /* Grab IMAGE from anywhere */
+    // document.body.setAttribute('style', 'background-image:url(http://localhost/021/wp-content/uploads/2016/03/dsc1314.jpg);');
+
+    /* Grab FONT from anwyhere */
+    // same size
 
 });

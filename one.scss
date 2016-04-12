@@ -75,7 +75,7 @@ html.fp-enabled,
 #fp-nav { display:none; position: fixed; z-index: 100; margin-top: -32px; bottom: 0%; opacity: 1; background: #fff none repeat scroll 0% -2%;
 .right { right: 17px}
 .left { left: 17px}}
-.fp-slidesNav { z-index: 2147483647; opacity: 1; width: 80%; position: absolute; text-align: center; background: rgba(0, 0, 0, 0.2) none repeat scroll 0% 0%; height: 28px; bottom: 0px; margin-left:0 !important; overflow: hidden;
+.fp-slidesNav { z-index: 2147483647; opacity: 1; width: 80%; position: absolute; text-align: center; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%; height: 28px; bottom: 5px; margin-left:0 !important; overflow: hidden;
 .top { top: 17px }}
 #fp-nav ul,
 .fp-slidesNav ul { margin: 0; padding: 0}
@@ -303,7 +303,7 @@ body {
     width: 10%;
     position: absolute;
     z-index: 10;
-    background: rgba(0, 0, 0, 0.2) none repeat scroll 0% 0%;
+    background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;
 }
 .L {
     left:0;
@@ -471,6 +471,48 @@ body {
   position: relative;
   margin: 25% auto;
 }
+
+.heart {
+    position: relative;
+    width: 100px;
+    height: 90px;
+}
+.heart:before,
+.heart:after {
+    position: absolute;
+    content: "";
+    left: 50px;
+    top: 0;
+    width: 50px;
+    height: 80px;
+    background: #fc2e5a;
+    -moz-border-radius: 50px 50px 0 0;
+    border-radius: 50px 50px 0 0;
+    -webkit-transform: rotate(-45deg);
+       -moz-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+         -o-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+    -webkit-transform-origin: 0 100%;
+       -moz-transform-origin: 0 100%;
+        -ms-transform-origin: 0 100%;
+         -o-transform-origin: 0 100%;
+            transform-origin: 0 100%;
+}
+.heart:after {
+    left: 0;
+    -webkit-transform: rotate(45deg);
+       -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+         -o-transform: rotate(45deg);
+            transform: rotate(45deg);
+    -webkit-transform-origin: 100% 100%;
+       -moz-transform-origin: 100% 100%;
+        -ms-transform-origin: 100% 100%;
+         -o-transform-origin: 100% 100%;
+            transform-origin :100% 100%;
+}
+
 
 .double-bounce1, .double-bounce2 {
   width: 100%;
@@ -912,7 +954,7 @@ body {
     text-indent: 14px; }
 
     #saaitjies h1 {     
-        color: #fff;
+        color: #fff;    
         font: 400 92px/84px 'san-serif'
     }
 
@@ -924,3 +966,9 @@ body {
 
     /* https://jsfiddle.net/simurai/baBN9/ */
     p, h1 { resize: both }
+
+    /* http://www.mrmcguire.com/10-useful-google-font-combinations-for-your-next-site/ 
+       https://femmebot.github.io/google-type/*/
+    .font-presets {
+        /* */
+    }
