@@ -8,6 +8,7 @@ for (var i = 0; i < inks.length; i++) {
 	link.setAttribute('onclick', 'changeBackgroundImage(this)')
 }
 
+/*  */
 function changeBackgroundImage(imgref) {
 	 document.body.style.backgroundImage = "url('"+imgref.getAttribute('src')+"')";
 }
@@ -56,7 +57,7 @@ function onUniformation() {
 
 
 /** 
-* Lazy gepoesteray
+* Lazy loader
 */
 $('#pad, #moveUp, #moveDown, .fp-prev, .fp-next').hover( function () {
     onFormation();
@@ -78,7 +79,7 @@ $('#cntrl-fnt > div, .quickSee, #cntrl-bg > div').hide();
 
 
 $("#love").draggable({revert:true});
-$("body").droppable({
+$("#biggie").droppable({
   drop: function( event, ui ) {
     $('#cntrl-fnt > div, #cntrl-bg > div').fadeIn(1000); 
   }
@@ -100,7 +101,7 @@ document.addEventListener('mouseout', function(e) {
 
 
 /**
-* Needs clean up
+* Clean up
 */
 document.addEventListener('DOMContentLoaded', function() {
 
@@ -126,8 +127,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-
-
 
     initialization();  
 
@@ -206,5 +205,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });    
 
     document.querySelector('#loading').style.display='none';   
+
+    $("div.content, h1, p").resizable().draggable()
 
 });
