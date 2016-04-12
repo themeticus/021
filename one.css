@@ -1,10 +1,11 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed|Open+Sans+Condensed:300|Yanone+Kaffeesatz|Abel|Pathway+Gothic+One|Ropa+Sans|Acme|News+Cycle|Merriweather+Sans);
+@import url(https://fonts.googleapis.com/css?family=Abril+Fatface|Roboto|Roboto+Condensed|Open+Sans+Condensed:300|Yanone+Kaffeesatz|Abel|Pathway+Gothic+One|Ropa+Sans|Acme|News+Cycle|Merriweather+Sans);
 @import url(https://fonts.googleapis.com/css?family=Open+Sans|PT+Sans|Droid+Sans|Open+Sans+Condensed:300|Ubuntu|Raleway|Source+Sans+Pro|Montserrat|Roboto+Condensed|Oswald|Dosis|Oxygen|Yanone+Kaffeesatz|Josefin+Sans|Archivo+Narrow|Quicksand|Francois+One|Rubik|PT+Sans+Narrow|Signika);
 body {
   font-family: onelove, arial, helvetica;
   color: #fff;
   background: url(media/img/love-from-the-021-2-17.jpg) no-repeat transparent center;
-  background-size: cover; }
+  background-size: cover;
+  overflow: hidden !important; }
 
 * {
   *zoom: 1; }
@@ -126,9 +127,9 @@ html.fp-enabled,
 #fp-nav ul li,
 .fp-slidesNav ul li {
   display: block;
-  width: 14px;
-  height: 13px;
-  margin: 7px;
+  width: 21px;
+  height: 21px;
+  margin: 7px 3px;
   position: relative; }
 
 .fp-slidesNav ul li {
@@ -230,7 +231,7 @@ html.fp-enabled,
 
 #menu {
   position: fixed;
-  bottom: 30px;
+  bottom: 100px;
   right: 0;
   height: 40px;
   z-index: 70; }
@@ -241,7 +242,8 @@ html.fp-enabled,
       color: #fff;
       display: block;
       text-align: right;
-      padding: 0 5px 0 10px; }
+      padding: 5px 5px 5px 10px;
+      font-size: 22px; }
     #menu li.active a, #menu li.active a:hover {
       color: orange; }
     #menu li::hover {
@@ -614,7 +616,12 @@ body {
 .quickSee {
   position: absolute;
   bottom: 29px;
-  background: rgba(0, 0, 0, 0.2) none repeat scroll 0% 0%;
+  background: rgba(0, 0, 0, 0.3) none repeat scroll 0% 0%;
   padding: 20px; }
+  .quickSee h2 {
+    font-size: 2.3em !important; }
+
+#_homeza {
+  background: url(media/img/soema-one-love.png) 50% 50% transparent no-repeat; }
 
 /*# sourceMappingURL=one.css.map */
