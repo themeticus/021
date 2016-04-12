@@ -39,11 +39,19 @@ document.querySelector('#moveDown').addEventListener('click', function() {
     $.fn.fullpage.moveSectionDown()
 });
 
+
+/** Use addClass
+*
+*/
 function onFormation() {
     $('#moveUp').css({'bottom':'10%', 'right':'calc((100% - 3%) / 2)'}) 
     $('#moveDown').css({'bottom':'5%', 'right':'calc((100% - 3%) / 2)'}) 
     $('.fp-prev').css({'bottom':'7%', 'right':'calc((100% - -4%) / 2)'}) 
     $('.fp-next').css({'bottom':'7%', 'right':'calc((100% - 10%) / 2)'}) 
+}
+
+function onUniformation() {
+    $('#moveUp, #moveDown, .fp-prev, .fp-next').css({'bottom':'5%', 'right':'calc((100% - 3% )/ 2)'});
 }
 
 
@@ -56,9 +64,9 @@ $('#pad, #moveUp, #moveDown, .fp-prev, .fp-next').hover( function () {
     $('#moveUp, #moveDown, .fp-prev, .fp-next').hover(function() {
         onFormation();
     }, function() {        
-    $('#moveUp, #moveDown, .fp-prev, .fp-next').css({'bottom':'5%', 'right':'calc((100% - 3% )/ 2)'});
+        onUniformation()
     });   
-   $('#moveUp, #moveDown, .fp-prev, .fp-next').css({'bottom':'5%', 'right':'calc((100% - 3% )/ 2)'});
+   onUniformation()
 });  
 
 
@@ -68,40 +76,38 @@ $('#pad, #moveUp, #moveDown, .fp-prev, .fp-next').hover( function () {
 
 $('#cntrl-fnt > div, .quickSee, #cntrl-bg > div').hide();
 
-$("#stories").draggable();
-$("#love").droppable({
+
+$("#love").draggable({revert:true});
+$("body").droppable({
   drop: function( event, ui ) {
-    $('#cntrl-fnt > div').fadeIn(2000);
-    $('#cntrl-bg > div').fadeIn(2000);
+    $('#cntrl-fnt > div, #cntrl-bg > div').fadeIn(1000); 
   }
 });
 
 $('#user-cntrl').on('mouseenter', function(e) {
-    $('#cntrl-fnt > div').fadeIn(2000);
-    $('#cntrl-bg > div').fadeIn(2000);
+    $('#cntrl-fnt > div, #cntrl-bg > div').fadeIn(2000);
 }).on('mouseleave', function(e) {
-    $('#cntrl-fnt > div').fadeOut(2000);
-    $('#cntrl-bg > div').fadeOut(2000);
+    $('#cntrl-fnt > div, #cntrl-bg > div').fadeOut(2000);
 });
 
 document.addEventListener('mouseout', function(e) {
     e = e ? e : window.event;
     var from = e.relatedTarget || e.toElement;
     if (!from || from.nodeName == "HTML") {
-        $('#cntrl-fnt > div').fadeOut(1000);
-        $('#cntrl-bg > div').fadeOut(1000);
+        $('#cntrl-fnt > div, #cntrl-bg > div').fadeOut(1000);
     }
 });
 
+
 /**
-* Are you jus, please clean up this kak kanala, and wash your hands when you finish kanala... wash your fokking hands... and make quick
+* Needs clean up
 */
 document.addEventListener('DOMContentLoaded', function() {
 
     function initialization(){
         $('#onepage').fullpage({
-        sectionsColor: ['transparent', 'transparent'],
-        anchors: ['love', 'stories'],  
+        sectionsColor: ['transparent', 'transparent', 'transparent'],
+        anchors: ['love', 'biggie', 'smalls'],  
         animateAnchor:true,
         scrollOverflow: true,            
         //autoScrolling:true, 
@@ -115,24 +121,28 @@ document.addEventListener('DOMContentLoaded', function() {
         //showActiveTooltip: true,
         continuousVertical:false,     
         afterLoad: function(anchorLink, index){
-            $('#menu li').css({'border-bottom' : "2px solid transparent", "transition" : "all 1s ease"});          
-            $('#'+anchorLink).css({'border-bottom' : "2px solid #7FDBFF", "transition" : "all 1s ease"});  
+            $('#menu li').css({'background' : "transparent", "transition" : "all 1s ease"});          
+            $('#'+anchorLink).css({'background' : "rgba(0, 0, 0, 0.2) none repeat scroll 0% 0%", "transition" : "all 1s ease"});  
             }
         });
     }
 
+
+
     initialization();  
 
-    /* mini preview, maybe make clickable? */ 
-    $('#woordtjies div.hori-indi ul > li > a').hover( function() {
+    $('#woordtjies div.hori-indi ul > li a').hover( function() {
+        $('.content').css('opacity' , '0.05');
         $('.quickSee').show();
         var preview = this.getAttribute('id');
         var bemoer = parseInt(preview) + 1;
         var minipreview = $('#woordtjies .slide:nth-child('+bemoer.toString()+')');        
         var titlepreview = minipreview.find('h1').text();
         var storypreview = minipreview.find('p').text();
-        $('.quickSee').html("<h2>" + titlepreview + "</h2><br/>" + storypreview +"")        
-    }, function() {
+        $('.quickSee').html("<h2>" + titlepreview + "</h2><br/>" + storypreview +"");
+        
+    }, function() {        
+        $('.content').css('opacity' , '1');
         $('.quickSee').hide()
     });    
 
@@ -156,8 +166,6 @@ document.addEventListener('DOMContentLoaded', function() {
         $storytainer.stop();
     }); 	
 
-    /* please don't duplicate like this naaier */
-
 	var $bbtainer = $('.bb-img ul'),   
     bbimgist = 10000;   
 
@@ -178,8 +186,6 @@ document.addEventListener('DOMContentLoaded', function() {
         $bbtainer.stop();
     }); 	
 
-    /* please don't duplicate like this naaier */
-
     var $fftainer = $('.fnt ul'),   
     ffist = 10000;   
 
@@ -198,8 +204,6 @@ document.addEventListener('DOMContentLoaded', function() {
       }, function(){
         $fftainer.stop();
     });    
-
-    /* please don't duplicate like this naaier */  
 
     document.querySelector('#loading').style.display='none';   
 
