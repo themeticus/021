@@ -17,10 +17,11 @@ function changeBackgroundImage(imgref) {
 /** 
 * Update font familia 
 */
-var current_fonts = document.querySelector('div.fnt').getElementsByTagName('a');
+var fontTitle = document.querySelector('div.fnt').getElementsByTagName('a');
 
-for (var i = 0; i < current_fonts.length; i++) {
-	var current_font = current_fonts[i];
+
+for (var i = 0; i < fontTitle.length; i++) {
+	var current_font = fontTitle[i];
 	current_font.setAttribute('onclick', 'changeFontFamily(this)')
 }
 
@@ -129,8 +130,19 @@ document.addEventListener('DOMContentLoaded', function() {
         //showActiveTooltip: true,
         continuousVertical:false,     
         afterLoad: function(anchorLink, index){
-            $('#menu li').css({'background' : "transparent", "transition" : "all 1s ease"});          
-            $('#'+anchorLink).css({'background' : "rgba(0, 0, 0, 0.2) none repeat scroll 0% 0%", "transition" : "all 1s ease"});  
+            var same = $('#menu li'),
+            came = $('#'+anchorLink);
+            same.css({'background' : "transparent", "opacity" : "0"});          
+            came.css({'background' : "rgba(0, 0, 0, 0.2) none repeat scroll 0% 0%", "opacity" : "1"});  
+            $('#menu').hover( function() {
+                if(came) {
+                    same.css({"transition" : "all 1s ease", "opacity" : "1"});  
+                }
+            }, function () {
+                if(!came) {
+                    same.css({"transition" : "all 1s ease", "opacity" : "0"});  
+                } 
+            }) 
             }
         });
     }
@@ -215,16 +227,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     $("div.content, h1, p").draggable();
 
-    $("div.content").resizable({
-      resize: function( event, ui ) {
-        ui.size.height = Math.round( ui.size.height / 30 ) * 30;
-      }
+    /* Quick accordion list */
+    $('.link').on('click', function(e){
+        var targetpage = $($(this).attr("href"));
+        targetpage.slideDown(500).siblings('div').slideUp(500)
+        return false
     });
 
-    /* Grab IMAGE from anywhere */
-    // document.body.setAttribute('style', 'background-image:url(http://localhost/021/wp-content/uploads/2016/03/dsc1314.jpg);');
-
-    /* Grab FONT from anwyhere */
-    // same size
-
 });
+
