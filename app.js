@@ -1,5 +1,14 @@
 /**
-*  Update background noise 
+*  Clean up this mess naaier...
+*/
+var slides = $('section').children();
+for (var s = 0; s < slides.length; s++) {
+    slides[s].setAttribute('class', 'slide');
+} 
+
+
+/**
+*  
 */
 var inks = document.querySelector('div.bb-img').getElementsByTagName('img');
 
@@ -8,14 +17,13 @@ for (var i = 0; i < inks.length; i++) {
 	link.setAttribute('onclick', 'changeBackgroundImage(this)')
 }
 
-/*  */
 function changeBackgroundImage(imgref) {
 	 document.body.style.backgroundImage = "url('"+imgref.getAttribute('src')+"')";
 }
 
 
 /** 
-* Update font familia 
+* 
 */
 var fontTitle = document.querySelector('div.fnt').getElementsByTagName('a');
 
@@ -31,7 +39,7 @@ function changeFontFamily(fontref) {
 
 
 /** 
-* Secondary navigation 
+* 
 */
 document.querySelector('#moveUp').addEventListener('click', function() {
     $.fn.fullpage.moveSectionUp()
@@ -42,8 +50,8 @@ document.querySelector('#moveDown').addEventListener('click', function() {
 });
 
 
-/** Use addClass
-*
+/**
+*  
 */
 function onFormation() {
     $('#moveUp').css({'bottom':'10%', 'right':'calc((100% - 3%) / 2)'}) 
@@ -57,8 +65,8 @@ function onUniformation() {
 }
 
 
-/** 
-* Lazy loader
+/**
+*  
 */
 $('#pad, #moveUp, #moveDown, .fp-prev, .fp-next').hover( function () {
     onFormation();
@@ -73,10 +81,10 @@ $('#pad, #moveUp, #moveDown, .fp-prev, .fp-next').hover( function () {
 
 
 /**
-* Lazy settings
+*  
 */
 
-$('#cntrl-fnt > div, .quickSee, #cntrl-bg > div').hide();
+$('#cntrl-fnt > div, .quick, #cntrl-bg > div').hide();
 
 
 $("#love").draggable({revert:true});
@@ -109,7 +117,7 @@ document.addEventListener('mouseout', function(e) {
 
 
 /**
-* Clean up
+*  
 */
 document.addEventListener('DOMContentLoaded', function() {
 
@@ -134,7 +142,7 @@ document.addEventListener('DOMContentLoaded', function() {
             came = $('#'+anchorLink);
             same.css({'background' : "transparent", "opacity" : "0"});          
             came.css({'background' : "rgba(0, 0, 0, 0.2) none repeat scroll 0% 0%", "opacity" : "1"});  
-            $('#menu').hover( function() {
+            $('#menu li').hover( function() {
                 if(came) {
                     same.css({"transition" : "all 1s ease", "opacity" : "1"});  
                 }
@@ -151,17 +159,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
     $('#woordtjies div.hori-indi ul > li a').hover( function() {
         $('.content').css('opacity' , '0.05');
-        $('.quickSee').show();
+        $('.quick').show();
         var preview = this.getAttribute('id');
         var bemoer = parseInt(preview) + 1;
         var minipreview = $('#woordtjies .slide:nth-child('+bemoer.toString()+')');        
         var titlepreview = minipreview.find('h1').text();
         var storypreview = minipreview.find('p').text();
-        $('.quickSee').html("<h2>" + titlepreview + "</h2><br/>" + storypreview +"");
+        $('.quick').html("<h2>" + titlepreview + "</h2><br/>" + storypreview +"");
         
     }, function() {        
         $('.content').css('opacity' , '1');
-        $('.quickSee').hide()
+        $('.quick').hide()
     });    
 
 	var $storytainer = $('.indi-dots ul'),   
