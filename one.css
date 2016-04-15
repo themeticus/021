@@ -273,7 +273,7 @@ p a {
   height: auto;
   width: 80%;
   float: left;
-  padding: 0 10%; }
+  padding: 10%; }
 
 #menu a:hover {
   background-color: #7FDBFF !important;
@@ -364,6 +364,10 @@ p a {
   margin: 7px !important;
   height: 8px !important; }
 
+@media only screen and (min-width: 769px) {
+  #woordtjies .content {
+    width: 50%;
+    padding: 10%; } }
 #onepage section:nth-child(1) .slide .content h1,
 #onepage section:nth-child(2) .slide .content h1 {
   margin-bottom: 0px !important; }
@@ -1156,5 +1160,14 @@ p, h1 { resize: both } */
   font: 900 39px/32px 'Playfair Display', Georgia, serif;
   margin-left: 4px;
   display: block; }
+
+canvas {
+  display: block;
+  position: fixed;
+  z-index: 9;
+  background-color: transparent;
+  top: 0;
+  left: 0;
+  opacity: .121; }
 
 /*# sourceMappingURL=one.css.map */
