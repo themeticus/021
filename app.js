@@ -1,5 +1,5 @@
 /**
-*  Clean up this mess naaier...
+*  1ove
 */
 var slides = $('section').children();
 for (var s = 0; s < slides.length; s++) {
@@ -243,4 +243,54 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
 });
+
+/* Speeldingetjie */
+
+var size = window.innerWidth; 
+var canvas = document.createElement("canvas");
+canvas.width = size;
+canvas.height = window.innerHeight - 100;
+//document.body.appendChild(canvas);
+
+var ctx = canvas.getContext("2d");
+var centerX = size/2;
+var centerY = size/2;
+var radius = size/2;
+var x, y;
+var angle;
+var numberOfPointsAlongCircle = 900;
+var table = 140;
+var displayInfo = true;
+ctx.strokeStyle="#f5f5f5";
+
+function drawFrame() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  for(var i = 1; i < numberOfPointsAlongCircle; i++) { 
+    angle = Math.PI*2/numberOfPointsAlongCircle*i;
+    x = Math.cos(angle)*radius + centerX;
+    y = Math.sin(angle)*radius + centerY;
+    ctx.beginPath();
+    ctx.moveTo(x, y);
+    angle = angle*table;
+    x = Math.cos(angle)*radius + centerX;
+    y = Math.sin(angle)*radius + centerY;    
+    ctx.lineTo(x, y);
+   ctx.stroke();
+  }  
+  
+  if(displayInfo) {
+    ctx.fillText(Math.round(table), 0, 0);
+    ctx.fillText(Math.round(numberOfPointsAlongCircle), 0, 0);
+  }
+}
+
+function drawLoop() {
+  requestAnimationFrame(drawLoop);
+  drawFrame();
+  numberOfPointsAlongCircle += 0.01;
+  table += 0.001001;
+}
+
+drawLoop();
 
