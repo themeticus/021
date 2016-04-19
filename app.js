@@ -233,7 +233,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.querySelector('#loading').style.display='none';   
 
-    $("div.content, h1, p").draggable();
+    //$("div.content, h1, p").draggable();
 
     /* Quick accordion list */
     $('.link').on('click', function(e){
@@ -250,7 +250,8 @@ var size = window.innerWidth;
 var canvas = document.createElement("canvas");
 canvas.width = size;
 canvas.height = window.innerHeight - 100;
-//document.body.appendChild(canvas);
+put = document.getElementById("ballpoint");
+put.appendChild(canvas);
 
 var ctx = canvas.getContext("2d");
 var centerX = size/2;
@@ -293,4 +294,3 @@ function drawLoop() {
 }
 
 drawLoop();
-
