@@ -1,35 +1,35 @@
 /**
 *  1ove
 */
-var slides = $('section').children();
+var slides = $('section').children()
 for (var s = 0; s < slides.length; s++) {
-    slides[s].setAttribute('class', 'slide');
+    slides[s].setAttribute('class', 'slide')
 } 
 
 
 /**
 *  
 */
-var inks = document.querySelector('div.bb-img').getElementsByTagName('img');
+var inks = document.querySelector('div.bb-img').getElementsByTagName('img')
 
 for (var i = 0; i < inks.length; i++) {
-	var link = inks[i];
+	var link = inks[i]
 	link.setAttribute('onclick', 'changeBackgroundImage(this)')
 }
 
 function changeBackgroundImage(imgref) {
-	 document.body.style.backgroundImage = "url('"+imgref.getAttribute('src')+"')";
+	 document.body.style.backgroundImage = "url('"+imgref.getAttribute('src')+"')"
 }
 
 
 /** 
 * 
 */
-var fontTitle = document.querySelector('div.fnt').getElementsByTagName('a');
+var fontTitle = document.querySelector('div.fnt').getElementsByTagName('a')
 
 
 for (var i = 0; i < fontTitle.length; i++) {
-	var current_font = fontTitle[i];
+	var current_font = fontTitle[i]
 	current_font.setAttribute('onclick', 'changeFontFamily(this)')
 }
 
@@ -43,11 +43,11 @@ function changeFontFamily(fontref) {
 */
 document.querySelector('#moveUp').addEventListener('click', function() {
     $.fn.fullpage.moveSectionUp()
-});
+})
 
 document.querySelector('#moveDown').addEventListener('click', function() {
     $.fn.fullpage.moveSectionDown()
-});
+})
 
 
 /**
@@ -61,7 +61,7 @@ function onFormation() {
 }
 
 function onUniformation() {
-    $('#moveUp, #moveDown, .fp-prev, .fp-next').css({'bottom':'5%', 'right':'calc((100% - 3% )/ 2)'});
+    $('#moveUp, #moveDown, .fp-prev, .fp-next').css({'bottom':'5%', 'right':'calc((100% - 3% )/ 2)'})
 }
 
 
@@ -69,51 +69,51 @@ function onUniformation() {
 *  
 */
 $('#pad, #moveUp, #moveDown, .fp-prev, .fp-next').hover( function () {
-    onFormation();
+    onFormation()
 }, function() {
     $('#moveUp, #moveDown, .fp-prev, .fp-next').hover(function() {
-        onFormation();
+        onFormation()
     }, function() {        
         onUniformation()
     });   
    onUniformation()
-});  
+}) 
 
 
 /**
 *  
 */
 
-$('#cntrl-fnt > div, .quick, #cntrl-bg > div').hide();
+$('#cntrl-fnt > div, .quick, #cntrl-bg > div').hide()
 
 
-$("#love").draggable({revert:true});
+$("#love").draggable({revert:true})
 $("#biggie").droppable({
   drop: function( event, ui ) {
     $('#cntrl-fnt > div, #cntrl-bg > div').fadeIn(1000); 
   }
-});
+})
 
 $('.indi-dots ul').on('mouseenter', function (e) {
-    console.log('beep');
+    console.log('beep')
     $('.indi-dots ul').css('opacity', '1 !important')
 }).on('mouseleave', function(e) {
     $('.indi-dots ul').css('opacity', '0.2 !important')
-});
+})
 
 $('#user-cntrl').on('mouseenter', function(e) {
-    $('#cntrl-fnt > div, #cntrl-bg > div').fadeIn(2000);
+    $('#cntrl-fnt > div, #cntrl-bg > div').fadeIn(2000)
 }).on('mouseleave', function(e) {
-    $('#cntrl-fnt > div, #cntrl-bg > div').fadeOut(2000);
-});
+    $('#cntrl-fnt > div, #cntrl-bg > div').fadeOut(2000)
+})
 
 document.addEventListener('mouseout', function(e) {
-    e = e ? e : window.event;
-    var from = e.relatedTarget || e.toElement;
+    e = e ? e : window.event
+    var from = e.relatedTarget || e.toElement
     if (!from || from.nodeName == "HTML") {
-        $('#cntrl-fnt > div, #cntrl-bg > div').fadeOut(1000);
+        $('#cntrl-fnt > div, #cntrl-bg > div').fadeOut(1000)
     }
-});
+})
 
 
 /**
@@ -121,13 +121,14 @@ document.addEventListener('mouseout', function(e) {
 */
 document.addEventListener('DOMContentLoaded', function() {
 
+    //drawLoop()
+
     function initialization(){
         $('#onepage').fullpage({
         sectionsColor: ['transparent', 'transparent', 'transparent'],
         anchors: ['love', 'biggie', 'smalls'],  
         animateAnchor:true,
         scrollOverflow: true,            
-        //autoScrolling:true, 
         fitSection: true,
         menu: '#menu',
         navigation: true,
@@ -135,162 +136,169 @@ document.addEventListener('DOMContentLoaded', function() {
         css3: true,
         slidesNavigation: true,
         slidesNavPosition: 'bottom',
-        //showActiveTooltip: true,
         continuousVertical:false,     
         afterLoad: function(anchorLink, index){
             var same = $('#menu li'),
-            came = $('#'+anchorLink);
-            same.css({'background' : "transparent", "opacity" : "0"});          
-            came.css({'background' : "rgba(0, 0, 0, 0.2) none repeat scroll 0% 0%", "opacity" : "1"});  
+            came = $('#'+anchorLink)
+            same.css({'background' : "transparent", "opacity" : "0"})     
+            came.css({'background' : "rgba(0, 0, 0, 0.2) none repeat scroll 0% 0%", "opacity" : "1"})
             $('#menu li').hover( function() {
                 if(came) {
-                    same.css({"transition" : "all 1s ease", "opacity" : "1"});  
+                    same.css({"transition" : "all 1s ease", "opacity" : "1"})
                 }
             }, function () {
                 if(!came) {
-                    same.css({"transition" : "all 1s ease", "opacity" : "0"});  
+                    same.css({"transition" : "all 1s ease", "opacity" : "0"})
                 } 
             }) 
             }
-        });
+        })
     }
 
-    initialization();  
+    initialization() 
 
     $('#woordtjies div.hori-indi ul > li a').hover( function() {
-        $('.content').css('opacity' , '0.05');
-        $('.quick').show();
-        var preview = this.getAttribute('id');
-        var bemoer = parseInt(preview) + 1;
-        var minipreview = $('#woordtjies .slide:nth-child('+bemoer.toString()+')');        
-        var titlepreview = minipreview.find('h1').text();
-        var storypreview = minipreview.find('p').text();
-        $('.quick').html("<h2>" + titlepreview + "</h2><br/>" + storypreview +"");
+        $('.content').css('opacity' , '0.05')
+        $('.quick').show()
+        var preview = this.getAttribute('id')
+        var bemoer = parseInt(preview) + 1
+        var minipreview = $('#woordtjies .slide:nth-child('+bemoer.toString()+')')      
+        var titlepreview = minipreview.find('h1').text()
+        var storypreview = minipreview.find('p').text()
+        $('.quick').html("<h2>" + titlepreview + "</h2><br/>" + storypreview +"")
         
     }, function() {        
-        $('.content').css('opacity' , '1');
+        $('.content').css('opacity' , '1')
         $('.quick').hide()
-    });    
+    })  
 
 	var $storytainer = $('.indi-dots ul'),   
-    droll = 10000;   
+    droll = 10000 
 
     $('.R').hover(function() {
         $storytainer.animate({
             'scrollLeft': droll
-        },{duration: 2000, queue: false});
+        },{duration: 2000, queue: false})
     }, function(){
-        $storytainer.stop();
+        $storytainer.stop()
+    })
 
-    });
-    
     $('.L').hover(function() {
         $storytainer.animate({
             'scrollLeft': -1
-        },{duration: 2000, queue: false});
+        },{duration: 2000, queue: false})
       }, function(){
         $storytainer.stop();
-    }); 	
+    })	
 
 	var $bbtainer = $('.bb-img ul'),   
-    bbimgist = 10000;   
+    bbimgist = 10000
 
     $('.imgR').hover(function() {
         $bbtainer.animate({
             'scrollLeft': bbimgist
-        },{duration: 10000, queue: false});
+        },{duration: 10000, queue: false})
     }, function(){
-        $bbtainer.stop();
-
-    });
+        $bbtainer.stop()
+    })
     
     $('.imgL').hover(function() {
         $bbtainer.animate({
             'scrollLeft': -1
-        },{duration: 10000, queue: false});
+        },{duration: 10000, queue: false})
       }, function(){
-        $bbtainer.stop();
-    }); 	
+        $bbtainer.stop()
+    })	
 
     var $fftainer = $('.fnt ul'),   
-    ffist = 10000;   
+    ffist = 10000 
 
     $('.fntR').hover(function() {
         $fftainer.animate({
             'scrollLeft': ffist
-        },{duration: 10000, queue: false});
+        },{duration: 10000, queue: false})
     }, function(){
-        $fftainer.stop();
-    });
+        $fftainer.stop()
+    })
     
     $('.fntL').hover(function() {
         $fftainer.animate({
             'scrollLeft': -1
-        },{duration: 10000, queue: false});
+        },{duration: 10000, queue: false})
       }, function(){
-        $fftainer.stop();
-    });    
+        $fftainer.stop()
+    })
 
-    document.querySelector('#loading').style.display='none';   
+    document.querySelector('#loading').style.display = 'none'; 
 
-    //$("div.content, h1, p").draggable();
+    //$("canvas").draggable()
 
-    /* Quick accordion list */
-    $('.link').on('click', function(e){
-        var targetpage = $($(this).attr("href"));
-        targetpage.slideDown(500).siblings('div').slideUp(500)
-        return false
-    });
+    /**
+     *
+        $('.link').on('click', function(e){
+            var targetpage = $($(this).attr("href"));
+            targetpage.slideDown(500).siblings('div').slideUp(500)
+            return false
+        });
+    */
 
 });
 
-/* Speeldingetjie */
 
-var size = window.innerWidth; 
-var canvas = document.createElement("canvas");
-canvas.width = size;
-canvas.height = window.innerHeight - 100;
-put = document.getElementById("ballpoint");
-put.appendChild(canvas);
+/**
+ *
+ */
 
-var ctx = canvas.getContext("2d");
-var centerX = size/2;
-var centerY = size/2;
-var radius = size/2;
-var x, y;
-var angle;
-var numberOfPointsAlongCircle = 900;
-var table = 140;
-var displayInfo = true;
-ctx.strokeStyle="#f5f5f5";
+var canvas = document.createElement('canvas')
+var ball, ctx, size, centerX, centerY, radius, x, y, angle, points, table
+
+setParameters({
+    nopac : 100,
+    table : 0,
+    size : canvas.width,
+    color : "#cccccc"
+})
+
+function setParameters(params) {
+    ball = document.getElementById('gameDiv')
+    ctx = canvas.getContext('2d')
+    ctx.strokeStyle = params.color
+    points = params.nopac
+    table = params.table
+    centerX = params.size
+    centerY = params.size
+    radius = params.size
+    size = params.size
+}
+
+function placeCanvas() {
+    canvas.width = window.innerWidth 
+    canvas.height = window.innerHeight
+    ball.appendChild(canvas)
+}
 
 function drawFrame() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-  for(var i = 1; i < numberOfPointsAlongCircle; i++) { 
-    angle = Math.PI*2/numberOfPointsAlongCircle*i;
-    x = Math.cos(angle)*radius + centerX;
-    y = Math.sin(angle)*radius + centerY;
-    ctx.beginPath();
-    ctx.moveTo(x, y);
-    angle = angle*table;
-    x = Math.cos(angle)*radius + centerX;
-    y = Math.sin(angle)*radius + centerY;    
-    ctx.lineTo(x, y);
-   ctx.stroke();
-  }  
-  
-  if(displayInfo) {
-    ctx.fillText(Math.round(table), 0, 0);
-    ctx.fillText(Math.round(numberOfPointsAlongCircle), 0, 0);
-  }
+    ctx.clearRect(0, 0, canvas.width, canvas.height)
+    for(var i = 1; i < points; i++) { 
+        angle = Math.PI*2/points*i
+        x = Math.cos(angle)*radius + centerX
+        y = Math.sin(angle)*radius + centerY
+        ctx.beginPath()
+        ctx.moveTo(x, y)
+        angle = angle*table
+        x = Math.cos(angle)*radius + centerX
+        y = Math.sin(angle)*radius + centerY 
+        ctx.lineTo(x, y)
+        ctx.stroke()
+        ctx.fillText(Math.round(table), 0, 0)
+        ctx.fillText(Math.round(points), 0, 0)
+    }
 }
 
 function drawLoop() {
-  requestAnimationFrame(drawLoop);
-  drawFrame();
-  numberOfPointsAlongCircle += 0.01;
-  table += 0.001001;
+    placeCanvas()
+    requestAnimationFrame(drawLoop)
+    drawFrame()
+    points += 0.01
+    table += 0.001001
 }
-
-drawLoop();
