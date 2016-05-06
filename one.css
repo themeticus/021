@@ -1011,7 +1011,7 @@ body {
   width: 750px; }
 
 .slide#darwin h1 {
-  color: #161616;
+  color: #888888;
   font: 400 58px/58px 'old standard tt';
   margin: 0 0 32px 0;
   text-transform: uppercase; }
@@ -1020,19 +1020,19 @@ body {
   font-size: 18px; }
 
 .slide#darwin h2 {
-  color: #161616;
+  color: #888888;
   font: 400 28px/28px 'old standard tt';
   margin: 160px 0 14px 0;
   text-transform: uppercase; }
 
 .slide#darwin h3 {
-  color: #161616;
+  color: #888888;
   font: 400 14px/21px 'old standard tt';
   margin: 0 0 80px 0;
   text-transform: uppercase; }
 
 .slide#darwin h4 {
-  color: #161616;
+  color: #888888;
   font: 400 14px/21px 'old standard tt';
   font-style: italic;
   margin: 0; }
