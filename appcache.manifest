@@ -1,0 +1,21 @@
+CACHE MANIFEST
+# 2010-06-18:v5
+
+CACHE:
+index.html
+one.css
+one.scss
+one.js
+app.js
+
+# offline.html will be displayed if the user is offline
+FALLBACK:
+/ /offline.html
+
+# All other resources (e.g. sites) require the user to be online. 
+NETWORK:
+*
+
+# Additional resources to cache
+CACHE:
+media/img/love-from-the-021-2-17.jpg
