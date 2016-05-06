@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function initialization(){
         $('#onepage').fullpage({
-        sectionsColor: ['transparent', 'transparent', 'transparent'],
+        sectionsColor: ['transparent', 'transparent', '#000000'],
         anchors: ['love', 'biggie', 'smalls'],  
         animateAnchor:true,
         scrollOverflow: true,            
@@ -140,8 +140,12 @@ document.addEventListener('DOMContentLoaded', function() {
         afterLoad: function(anchorLink, index){
             var same = $('#menu li'),
             came = $('#'+anchorLink)
+
             same.css({'background' : "transparent", "opacity" : "0"})     
             came.css({'background' : "rgba(0, 0, 0, 0.2) none repeat scroll 0% 0%", "opacity" : "1"})
+
+            $('.slide').css('background','black !important')
+
             $('#menu li').hover( function() {
                 if(came) {
                     same.css({"transition" : "all 1s ease", "opacity" : "1"})
@@ -150,9 +154,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 if(!came) {
                     same.css({"transition" : "all 1s ease", "opacity" : "0"})
                 } 
-            }) 
+            }); 
             }
         })
+
     }
 
     initialization() 

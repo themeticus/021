@@ -1093,7 +1093,7 @@ body {
   font: 400 92px/84px 'san-serif'; }
 
 #saaitjies .slide {
-  background-color: transparent;
+  background-color: #000000 !important;
   margin: 0 auto;
   padding: 0px 0px; }
 
