@@ -3,15 +3,15 @@ self.addEventListener('install', function (e) {
   e.waitUntil(
     caches.open('v1-static').then( function (cache) {
       return cache.addAll([
-      	'/media/',
-      	'/media/fonts/',
-      	'/media/fonts/1ove.ttf',
-      	'/media/fonts/1ove.woff',
-      	'/media/img/',
-      	'/media/img/love-from-the-021-2-149.jpg',
-        '/one.js',
-        '/app.js',
-        '/one.css'
+      	'https://themeticus.github.io/021/media/',
+      	'https://themeticus.github.io/021/media/fonts/',
+      	'https://themeticus.github.io/021/media/fonts/1ove.ttf',
+      	'https://themeticus.github.io/021/media/fonts/1ove.woff',
+      	'https://themeticus.github.io/021/media/img/',
+      	'https://themeticus.github.io/021/media/img/love-from-the-021-2-149.jpg',
+        'https://themeticus.github.io/021/one.js',
+        'https://themeticus.github.io/021/app.js',
+        'https://themeticus.github.io/021/one.css'
       ]).then(() => self.skipWaiting());
     })
   );
