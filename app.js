@@ -250,8 +250,8 @@ document.addEventListener('DOMContentLoaded', function() {
     /* offline */
 
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('https://themeticus.github.io/021/sw.js', {
-        scope: 'https://themeticus.github.io/021/'
+      navigator.serviceWorker.register('sw.js', {
+        scope: '/'
       }).then(function(reg) {
         console.log(reg);
       }).catch(function(err) {
