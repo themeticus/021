@@ -250,8 +250,8 @@ document.addEventListener('DOMContentLoaded', function() {
     /* offline */
 
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('sw.js', {
-        scope: '/'
+      navigator.serviceWorker.register('/021/sw.js', {
+        scope: '/021/'
       }).then(function(reg) {
         console.log(reg);
       }).catch(function(err) {
