@@ -251,7 +251,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('sw.js', {
-        scope: '/'
+        scope: 'https://themeticus.github.io/021/'
       }).then(function(reg) {
         console.log(reg);
       }).catch(function(err) {
