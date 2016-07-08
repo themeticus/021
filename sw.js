@@ -3,12 +3,12 @@ self.addEventListener('install', function (e) {
   e.waitUntil(
     caches.open('v1-static').then( function (cache) {
       return cache.addAll([
-      	'/021/media/fonts/1ove.ttf',
-      	'/021/media/fonts/1ove.woff',
-      	'/021/media/img/love-from-the-021-2-149.jpg',
-        '/021/one.js',
-        '/021/app.js',
-        '/021/one.css'
+      	'https://themeticus.github.io/021/media/fonts/1ove.ttf',
+      	'https://themeticus.github.io/021/media/fonts/1ove.woff',
+      	'https://themeticus.github.io/021/media/img/love-from-the-021-2-149.jpg',
+        'https://themeticus.github.io/021/one.js',
+        'https://themeticus.github.io/021/app.js',
+        'https://themeticus.github.io/021/one.css'
       ]).then(() => self.skipWaiting());
     })
   );
