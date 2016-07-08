@@ -247,7 +247,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     */
 
-    /* offline testing */
+    /* offline */
 
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('sw.js', {
