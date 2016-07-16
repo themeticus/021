@@ -10,7 +10,7 @@ $orange:orange;
 
 @mixin font-size($size) {
   font-size: $size;
-  font-size: calculateRem($size);
+  font-size:calculateRem($size);
 }
 
 @mixin transition($args) {
