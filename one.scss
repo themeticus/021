@@ -51,7 +51,7 @@ strong, small, span, em, a { display: inline-block}
 h1 { font-family: inherit; font-size: 222%; margin:0 0 20px; font-weight:normal}
 
 @font-face {    
-  font-family: 'onelove';
+  font-family: 'onelove'; // base font
   src:  url('media/fonts/1ove.ttf') format('ttf'),
         url('media/fonts/1ove.woff') format('woff')}
 
