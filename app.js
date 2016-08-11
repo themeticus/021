@@ -247,17 +247,19 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     */
 
-    /* offline */
-
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('https://themeticus.github.io/021/sw.js', {
-        scope: 'https://themeticus.github.io/021/'
-      }).then(function(reg) {
-        console.log(reg);
-      }).catch(function(err) {
-        console.log(err);
-      });
+    /*
+    if (navigator.serviceWorker) {
+        navigator.serviceWorker.register('./sw.js', {scope: './'})
+            .then(function (registration) {
+                console.log(registration);
+            })
+            .catch(function (e) {
+                console.error(e);
+            })
+    } else {
+        console.log('haaties-brudder')
     }
+    */
 
 });
 

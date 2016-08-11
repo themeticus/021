@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Abril+Fatface|Roboto|Roboto+Condensed|Open+Sans+Condensed:300|Yanone+Kaffeesatz|Abel|Pathway+Gothic+One|Ropa+Sans|Acme|News+Cycle|Merriweather+Sans);
 @import url(https://fonts.googleapis.com/css?family=Open+Sans|PT+Sans|Droid+Sans|Open+Sans+Condensed:300|Ubuntu|Raleway|Source+Sans+Pro|Montserrat|Roboto+Condensed|Oswald|Dosis|Oxygen|Yanone+Kaffeesatz|Josefin+Sans|Archivo+Narrow|Quicksand|Francois+One|Rubik|PT+Sans+Narrow|Signika|Yeseva+One|Crimson+Text); /* plains */
 @import url(https://fonts.googleapis.com/css?family=Lato|Playfair+Display|Oswald|PT+Mono|Gravitas+One|Old+Standard+TT|PT+Sans+Narrow|PT+Sans|PT+Serif|Vast+Shadow|Playfair+Display+SC|Bevan|Architects+Daughter|Lobster); /* smalls */
-body { font-family: onelove, arial, helvetica; color: #fff; background: url(media/img/love-from-the-021-2-149.jpg) no-repeat transparent center;     background-size: cover; overflow:hidden !important}
+body { font-family: onelove, arial, helvetica; color: #fff; background: url(media/img/love-from-the-021-2-17.jpg) no-repeat transparent center;     background-size: cover; overflow:hidden !important}
 $img-path:'media/img/love-from-the-021-2-';
 $img-root:'media/img/';
 $white:#fff;
@@ -10,7 +10,7 @@ $orange:orange;
 
 @mixin font-size($size) {
   font-size: $size;
-  font-size: calculateRem($size);
+  font-size:calculateRem($size);
 }
 
 @mixin transition($args) {
@@ -51,7 +51,7 @@ strong, small, span, em, a { display: inline-block}
 h1 { font-family: inherit; font-size: 222%; margin:0 0 20px; font-weight:normal}
 
 @font-face {    
-  font-family: 'onelove';
+  font-family: 'onelove'; // base font
   src:  url('media/fonts/1ove.ttf') format('ttf'),
         url('media/fonts/1ove.woff') format('woff')}
 
