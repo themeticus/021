@@ -1,4 +1,5 @@
 node_modules
+.gitignore
 .sass-cache
 one.css.map
 one.scss
