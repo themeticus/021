@@ -247,6 +247,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     */
 
+    /*
     if (navigator.serviceWorker) {
         navigator.serviceWorker.register('./sw.js', {scope: './'})
             .then(function (registration) {
@@ -258,6 +259,7 @@ document.addEventListener('DOMContentLoaded', function() {
     } else {
         console.log('haaties-brudder')
     }
+    */
 
 });
 
