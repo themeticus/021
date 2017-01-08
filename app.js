@@ -1,15 +1,9 @@
-/**
-*  1ove
-*/
 var slides = $('section').children()
+
 for (var s = 0; s < slides.length; s++) {
     slides[s].setAttribute('class', 'slide')
 } 
 
-
-/**
-*  
-*/
 var inks = document.querySelector('div.bb-img').getElementsByTagName('img')
 
 for (var i = 0; i < inks.length; i++) {
@@ -21,12 +15,7 @@ function changeBackgroundImage(imgref) {
 	 document.body.style.backgroundImage = "url('"+imgref.getAttribute('src')+"')"
 }
 
-
-/** 
-* 
-*/
 var fontTitle = document.querySelector('div.fnt').getElementsByTagName('a')
-
 
 for (var i = 0; i < fontTitle.length; i++) {
 	var current_font = fontTitle[i]
@@ -37,10 +26,6 @@ function changeFontFamily(fontref) {
   $('h1, p, em, pre, i, b, strong, .content a, #menu a').css({'font-family' : fontref.innerHTML})
 }
 
-
-/** 
-* 
-*/
 document.querySelector('#moveUp').addEventListener('click', function() {
     $.fn.fullpage.moveSectionUp()
 })
@@ -49,10 +34,6 @@ document.querySelector('#moveDown').addEventListener('click', function() {
     $.fn.fullpage.moveSectionDown()
 })
 
-
-/**
-*  
-*/
 function onFormation() {
     $('#moveUp').css({'bottom':'10%', 'right':'calc((100% - 3%) / 2)'}) 
     $('#moveDown').css({'bottom':'5%', 'right':'calc((100% - 3%) / 2)'}) 
@@ -64,10 +45,6 @@ function onUniformation() {
     $('#moveUp, #moveDown, .fp-prev, .fp-next').css({'bottom':'5%', 'right':'calc((100% - 3% )/ 2)'})
 }
 
-
-/**
-*  
-*/
 $('#pad, #moveUp, #moveDown, .fp-prev, .fp-next').hover( function () {
     onFormation()
 }, function() {
@@ -79,20 +56,7 @@ $('#pad, #moveUp, #moveDown, .fp-prev, .fp-next').hover( function () {
    onUniformation()
 }) 
 
-
-/**
-*  
-*/
-
 $('#cntrl-fnt > div, .quick, #cntrl-bg > div').hide()
-
-
-$("#love").draggable({revert:true})
-$("#biggie").droppable({
-  drop: function( event, ui ) {
-    $('#cntrl-fnt > div, #cntrl-bg > div').fadeIn(1000); 
-  }
-})
 
 $('.indi-dots ul').on('mouseenter', function (e) {
     console.log('beep')
@@ -115,18 +79,12 @@ document.addEventListener('mouseout', function(e) {
     }
 })
 
-
-/**
-*  
-*/
 document.addEventListener('DOMContentLoaded', function() {
-
-    //drawLoop()
 
     function initialization(){
         $('#onepage').fullpage({
-        sectionsColor: ['transparent', 'transparent', '#000000'],
-        anchors: ['love', 'biggie', 'smalls'],  
+        sectionsColor: ['transparent', 'transparent', 'transparent', 'transparent'],
+        anchors: ['love', 'biggie', 'smalls', 'tings'],  
         animateAnchor:true,
         scrollOverflow: true,            
         fitSection: true,
@@ -142,9 +100,9 @@ document.addEventListener('DOMContentLoaded', function() {
             came = $('#'+anchorLink)
 
             same.css({'background' : "transparent", "opacity" : "0"})     
-            came.css({'background' : "rgba(0, 0, 0, 0.2) none repeat scroll 0% 0%", "opacity" : "1"})
+            came.css({"opacity" : "1"})
 
-            $('.slide').css('background','black !important')
+            $('.slide').css('background','transparent')
 
             $('#menu li').hover( function() {
                 if(came) {
@@ -236,88 +194,4 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.querySelector('#loading').style.display = 'none'; 
 
-    //$("canvas").draggable()
-
-    /**
-     *
-        $('.link').on('click', function(e){
-            var targetpage = $($(this).attr("href"));
-            targetpage.slideDown(500).siblings('div').slideUp(500)
-            return false
-        });
-    */
-
-    /*
-    if (navigator.serviceWorker) {
-        navigator.serviceWorker.register('./sw.js', {scope: './'})
-            .then(function (registration) {
-                console.log(registration);
-            })
-            .catch(function (e) {
-                console.error(e);
-            })
-    } else {
-        console.log('haaties-brudder')
-    }
-    */
-
 });
-
-
-/**
- *
- */
-
-var canvas = document.createElement('canvas')
-var ball, ctx, size, centerX, centerY, radius, x, y, angle, points, table
-
-setParameters({
-    nopac : 100,
-    table : 0,
-    size : canvas.width,
-    color : "#cccccc"
-})
-
-function setParameters(params) {
-    ball = document.getElementById('gameDiv')
-    ctx = canvas.getContext('2d')
-    ctx.strokeStyle = params.color
-    points = params.nopac
-    table = params.table
-    centerX = params.size
-    centerY = params.size
-    radius = params.size
-    size = params.size
-}
-
-function placeCanvas() {
-    canvas.width = window.innerWidth 
-    canvas.height = window.innerHeight
-    ball.appendChild(canvas)
-}
-
-function drawFrame() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height)
-    for(var i = 1; i < points; i++) { 
-        angle = Math.PI*2/points*i
-        x = Math.cos(angle)*radius + centerX
-        y = Math.sin(angle)*radius + centerY
-        ctx.beginPath()
-        ctx.moveTo(x, y)
-        angle = angle*table
-        x = Math.cos(angle)*radius + centerX
-        y = Math.sin(angle)*radius + centerY 
-        ctx.lineTo(x, y)
-        ctx.stroke()
-        ctx.fillText(Math.round(table), 0, 0)
-        ctx.fillText(Math.round(points), 0, 0)
-    }
-}
-
-function drawLoop() {
-    placeCanvas()
-    requestAnimationFrame(drawLoop)
-    drawFrame()
-    points += 0.01
-    table += 0.001001
-}
