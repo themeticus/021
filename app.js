@@ -141,7 +141,7 @@ document.addEventListener('DOMContentLoaded', function() {
     $('.R').hover(function() {
         $storytainer.animate({
             'scrollLeft': droll
-        },{duration: 2000, queue: false})
+        },{duration: 20000, queue: false})
     }, function(){
         $storytainer.stop()
     })
@@ -149,7 +149,7 @@ document.addEventListener('DOMContentLoaded', function() {
     $('.L').hover(function() {
         $storytainer.animate({
             'scrollLeft': -1
-        },{duration: 2000, queue: false})
+        },{duration: 20000, queue: false})
       }, function(){
         $storytainer.stop();
     })	
@@ -160,7 +160,7 @@ document.addEventListener('DOMContentLoaded', function() {
     $('.imgR').hover(function() {
         $bbtainer.animate({
             'scrollLeft': bbimgist
-        },{duration: 10000, queue: false})
+        },{duration: 20000, queue: false})
     }, function(){
         $bbtainer.stop()
     })
@@ -168,7 +168,7 @@ document.addEventListener('DOMContentLoaded', function() {
     $('.imgL').hover(function() {
         $bbtainer.animate({
             'scrollLeft': -1
-        },{duration: 10000, queue: false})
+        },{duration: 20000, queue: false})
       }, function(){
         $bbtainer.stop()
     })	
@@ -179,7 +179,7 @@ document.addEventListener('DOMContentLoaded', function() {
     $('.fntR').hover(function() {
         $fftainer.animate({
             'scrollLeft': ffist
-        },{duration: 10000, queue: false})
+        },{duration: 20000, queue: false})
     }, function(){
         $fftainer.stop()
     })
@@ -187,7 +187,7 @@ document.addEventListener('DOMContentLoaded', function() {
     $('.fntL').hover(function() {
         $fftainer.animate({
             'scrollLeft': -1
-        },{duration: 10000, queue: false})
+        },{duration: 20000, queue: false})
       }, function(){
         $fftainer.stop()
     })
