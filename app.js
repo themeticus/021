@@ -4,24 +4,6 @@ for (var s = 0; s < slides.length; s++) {
     slides[s].setAttribute('class', 'slide')
 } 
 
-var inks = document.querySelector('div.bb-img').getElementsByTagName('img')
-
-for (var i = 0; i < inks.length; i++) {
-	var link = inks[i]
-	link.setAttribute('onclick', 'changeBackgroundImage(this)')
-}
-
-function changeBackgroundImage(imgref) {
-	 document.body.style.backgroundImage = "url('"+imgref.getAttribute('src')+"')"
-}
-
-var fontTitle = document.querySelector('div.fnt').getElementsByTagName('a')
-
-for (var i = 0; i < fontTitle.length; i++) {
-	var current_font = fontTitle[i]
-	current_font.setAttribute('onclick', 'changeFontFamily(this)')
-}
-
 function changeFontFamily(fontref) {  
   $('h1, p, em, pre, i, b, strong, .content a, #menu a').css({'font-family' : fontref.innerHTML})
 }
@@ -83,8 +65,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function initialization(){
         $('#onepage').fullpage({
-        sectionsColor: ['transparent', 'transparent', 'transparent', 'transparent'],
-        anchors: ['love', 'biggie', 'smalls', 'tings'],  
+        sectionsColor: ['transparent', 'transparent', 'transparent'],
+        anchors: ['love', 'biggie', 'smalls'],  
         animateAnchor:true,
         scrollOverflow: true,            
         fitSection: true,
