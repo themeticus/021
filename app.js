@@ -16,6 +16,42 @@ document.querySelector('#moveDown').addEventListener('click', function() {
     $.fn.fullpage.moveSectionDown()
 })
 
+var inks = document.querySelector('div.bb-img').getElementsByTagName('img')
+
+for (var i = 0; i < inks.length; i++) {
+    var link = inks[i]
+    link.setAttribute('onclick', 'changeBackgroundImage(this)')
+}
+
+$('#cntrl-fnt > div, .quick, #cntrl-bg > div').hide()
+
+
+$("#love").draggable({revert:true})
+$("#biggie").droppable({
+  drop: function( event, ui ) {
+    $('#cntrl-fnt > div, #cntrl-bg > div').fadeIn(1000); 
+  }
+})
+
+
+$('#user-cntrl').on('mouseenter', function(e) {
+    $('#cntrl-fnt > div, #cntrl-bg > div').fadeIn(2000)
+}).on('mouseleave', function(e) {
+    $('#cntrl-fnt > div, #cntrl-bg > div').fadeOut(2000)
+})
+
+document.addEventListener('mouseout', function(e) {
+    e = e ? e : window.event
+    var from = e.relatedTarget || e.toElement
+    if (!from || from.nodeName == "HTML") {
+        $('#cntrl-fnt > div, #cntrl-bg > div').fadeOut(1000)
+    }
+})
+
+function changeBackgroundImage(imgref) {
+     document.body.style.backgroundImage = "url('"+imgref.getAttribute('src')+"')"
+}
+
 function onFormation() {
     $('#moveUp').css({'bottom':'10%', 'right':'calc((100% - 3%) / 2)'}) 
     $('#moveDown').css({'bottom':'5%', 'right':'calc((100% - 3%) / 2)'}) 
@@ -150,7 +186,7 @@ document.addEventListener('DOMContentLoaded', function() {
     $('.imgL').hover(function() {
         $bbtainer.animate({
             'scrollLeft': -1
-        },{duration: 20000, queue: false})
+        },{duration: 10000, queue: false})
       }, function(){
         $bbtainer.stop()
     })	

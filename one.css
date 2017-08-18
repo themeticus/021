@@ -390,7 +390,7 @@ ul,
 .L, .R,
 #menu a,
 #menu {
-  transition: all 1.5s ease; }
+  transition: all .5s ease; }
 
 body {
   transition: all 3s ease; }
@@ -501,7 +501,7 @@ body {
   text-align: center;
   background: rgba(0, 0, 0, 0.2) none repeat scroll 0% 0%;
   height: 99.6785px;
-  top: 0px;
+  bottom: 10px;
   width: 100%;
   overflow: hidden; }
 
@@ -536,7 +536,7 @@ body {
 .fntR,
 .imgR {
   position: fixed;
-  top: 0px;
+  bottom: 10px;
   right: 0px;
   width: 10%;
   background-color: transparent;
@@ -546,7 +546,7 @@ body {
 .fntL,
 .imgL {
   position: fixed;
-  top: 0px;
+  bottom: 10px;
   left: 0px;
   width: 10%;
   background-color: transparent;
@@ -1191,5 +1191,105 @@ canvas {
     font-size: 18px;
     z-index: 2;
 }
+
+.fnt ul,
+.bb-img ul {
+  width: 100%;
+  white-space: nowrap;
+  overflow: auto;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  display: block;
+  float: left; }
+
+.fnt li:hover {
+  opacity: 0.5;
+  color: orange;
+  transition: all 0.5s ease;
+  cursor: pointer; }
+
+.fnt {
+  z-index: 999998;
+  opacity: 1;
+  position: absolute;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.2) none repeat scroll 0% 0%;
+  top: 0px;
+  width: 100%;
+  overflow: hidden; }
+
+.fnt a {
+  font-size: 30px;
+  font-weight: normal; }
+
+.fnt p {
+  font-size: 18px; }
+
+.bb-img {
+  z-index: 999999;
+  opacity: 1;
+  position: absolute;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.2) none repeat scroll 0% 0%;
+  height: 99.6785px;
+  bottom: 10px !important;
+  width: 100%;
+  overflow: hidden; }
+
+.fnt,
+.fntR,
+.fntL {
+  top: 99px !important; }
+
+.bb-img img {
+  width: 150px;
+  opacity: 0.5;
+  height: 99.6785px;
+  cursor: pointer; }
+
+.bb-img img:hover {
+  opacity: 1; }
+
+.bb-img ul li {
+  display: inline-block;
+  width: 150px;
+  height: 99.6785px;
+  margin: 0px;
+  position: relative; }
+
+.fnt ul li {
+  width: auto;
+  padding: 10px 20px;
+  display: inline-block;
+  margin: 0px;
+  position: relative; }
+
+.fntR,
+.imgR {
+  position: fixed;
+  bottom: 10px;
+  right: 0px;
+  width: 10%;
+  background-color: transparent;
+  z-index: 9899999;
+  opacity: 0.2; }
+
+.fntL,
+.imgL {
+  position: fixed;
+  bottom: 10px;
+  left: 0px;
+  width: 10%;
+  background-color: transparent;
+  z-index: 9899999;
+  opacity: 0.2; }
+
+.imgR,
+.imgL {
+  height: 99.6785px; }
+
+.fntR,
+.fntL {
+  height: 66px; }
 
 /*# sourceMappingURL=one.css.map */
