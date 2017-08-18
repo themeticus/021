@@ -1108,6 +1108,12 @@ body {
   margin: 0 auto;
   padding: 0px 0px; }
 
+#woordtjies .slide {
+  background-color: red !important;
+  opacity: 0.5;
+  margin: 0 auto;
+  padding: 0px 0px; }
+
 /* https://jsfiddle.net/simurai/baBN9/ 
 p, h1 { resize: both } */
 /** Font Pairing and Presets
@@ -1138,7 +1144,8 @@ p, h1 { resize: both } */
 #giveafuck p {
   width: 60%;
   color: #9d9e9d;
-  margin: 0 auto; }
+  margin: 0 auto;
+  font-size:30px; }
 
 #giveafuck .black-ital {
   font: italic 900 25px/25px 'Playfair Display', Georgia, serif;

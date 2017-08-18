@@ -16,38 +16,6 @@ document.querySelector('#moveDown').addEventListener('click', function() {
     $.fn.fullpage.moveSectionDown()
 })
 
-var inks = document.querySelector('div.bb-img').getElementsByTagName('img')
-
-for (var i = 0; i < inks.length; i++) {
-    var link = inks[i]
-    link.setAttribute('onclick', 'changeBackgroundImage(this)')
-}
-
-$('#cntrl-fnt > div, .quick, #cntrl-bg > div').hide()
-
-
-$("#love").draggable({revert:true})
-$("#biggie").droppable({
-  drop: function( event, ui ) {
-    $('#cntrl-fnt > div, #cntrl-bg > div').fadeIn(1000); 
-  }
-})
-
-
-$('#user-cntrl').on('mouseenter', function(e) {
-    $('#cntrl-fnt > div, #cntrl-bg > div').fadeIn(2000)
-}).on('mouseleave', function(e) {
-    $('#cntrl-fnt > div, #cntrl-bg > div').fadeOut(2000)
-})
-
-document.addEventListener('mouseout', function(e) {
-    e = e ? e : window.event
-    var from = e.relatedTarget || e.toElement
-    if (!from || from.nodeName == "HTML") {
-        $('#cntrl-fnt > div, #cntrl-bg > div').fadeOut(1000)
-    }
-})
-
 function changeBackgroundImage(imgref) {
      document.body.style.backgroundImage = "url('"+imgref.getAttribute('src')+"')"
 }
@@ -74,13 +42,20 @@ $('#pad, #moveUp, #moveDown, .fp-prev, .fp-next').hover( function () {
    onUniformation()
 }) 
 
+var inks = document.querySelector('div.bb-img').getElementsByTagName('img')
+
+for (var i = 0; i < inks.length; i++) {
+    var link = inks[i]
+    link.setAttribute('onclick', 'changeBackgroundImage(this)')
+}
+
 $('#cntrl-fnt > div, .quick, #cntrl-bg > div').hide()
 
-$('.indi-dots ul').on('mouseenter', function (e) {
-    console.log('beep')
-    $('.indi-dots ul').css('opacity', '1 !important')
-}).on('mouseleave', function(e) {
-    $('.indi-dots ul').css('opacity', '0.2 !important')
+$("#love").draggable({revert:true})
+$("#biggie").droppable({
+  drop: function( event, ui ) {
+    $('#cntrl-fnt > div, #cntrl-bg > div').fadeIn(1000); 
+  }
 })
 
 $('#user-cntrl').on('mouseenter', function(e) {
@@ -93,7 +68,7 @@ document.addEventListener('mouseout', function(e) {
     e = e ? e : window.event
     var from = e.relatedTarget || e.toElement
     if (!from || from.nodeName == "HTML") {
-        $('#cntrl-fnt > div, #cntrl-bg > div').fadeOut(1000)
+        $('#cntrl-fnt > div, #cntrl-bg > div').fadeOut()
     }
 })
 
