@@ -1187,8 +1187,8 @@ canvas {
     top: 0;
     left: 0;
     background: none 0% 0% repeat scroll rgba(0, 0, 0, 0.2);
-    padding: 5px;
-    font-size: 20px;
+    padding: 6px 11px 6px 15px;
+    font-size: 18px;
     z-index: 2;
 }
 
