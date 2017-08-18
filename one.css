@@ -1,7 +1,7 @@
 body {
   font-family: onelove, arial, helvetica;
   color: #fff;
-  background: url(media/img/love-from-the-021-2-433.jpg) no-repeat transparent center;
+  background: url(media/img/love-from-the-021-2-66.jpg) no-repeat #000000 center;
   background-size: cover;
   overflow: hidden !important; }
 
@@ -34,7 +34,8 @@ h1 {
   font-family: 'onelove';
   src: url("media/fonts/1ove.ttf") format("ttf"), url("media/fonts/1ove.woff") format("woff"); }
 .slimScrollBar {
-  background: #fff !important; }
+  background: #fff !important; 
+width:20px !important;}
 
 html.fp-enabled,
 .fp-enabled body {
@@ -234,13 +235,16 @@ html.fp-enabled,
   height: 40px;
   z-index: 70; }
   #menu li {
-    display: block; }
+    display: block;
+    position: fixed;
+    top: -2px;
+    left: 153px; }
     #menu li a {
       text-decoration: none;
       color: #fff;
       display: inline-block;
       text-align: right;
-      padding: 5px 5px 5px 10px;
+      padding: 5px 10px;
       font-size: 22px;
       background: none 0% 0% repeat scroll rgba(0, 0, 0, 0.2);
       float: right;
@@ -424,11 +428,18 @@ body {
   z-index: 10;
   background: transparent none repeat scroll 0% 0%; }
 
+.L:hover, 
+.R:hover {
+    background-color: orange !important;
+}
+
 .L {
-  left: 0; }
+  left: 0;
+  cursor: w-resize; }
 
 .R {
-  right: 0; }
+  right: 0;
+  cursor: e-resize; }
 
 .north {
   bottom: 10% !important;
@@ -1169,5 +1180,16 @@ canvas {
   top: 0;
   left: 0;
   opacity: .121; }
+
+.whobemewhenwebethree{
+    text-shadow: 1px 1px 1px #000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: none 0% 0% repeat scroll rgba(0, 0, 0, 0.2);
+    padding: 5px;
+    font-size: 20px;
+    z-index: 2;
+}
 
 /*# sourceMappingURL=one.css.map */
