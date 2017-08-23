@@ -84,10 +84,10 @@ document.addEventListener('DOMContentLoaded', function() {
         menu: '#menu',
         navigation: true,
         navigationPosition: 'bottom',
-        css3: true,
+        css3: false,
         slidesNavigation: true,
         slidesNavPosition: 'bottom',
-        continuousVertical:false,     
+        continuousVertical: true,     
         afterLoad: function(anchorLink, index){
             var same = $('#menu li'),
             came = $('#'+anchorLink)
