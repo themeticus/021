@@ -1,32 +1,54 @@
+
 body {
+  margin: 0;
   font-family: onelove, arial, helvetica;
-  color: #fff;
-  background: url(media/img/love-from-the-021-2-66.jpg) repeat #000000 93%;
-  background-size: cover;
-  background-repeat-y: repeat;
-  }
+  color: #000;
+}
+
 a {
   text-decoration: none;
   outline: none;
-  color: #fff }
+  color: #000 
+}
 
 strong, small, span, em, a {
-  display: inline-block; }
+  display: inline-block;
+}
 
 h1 {
   font-family: inherit;
   font-size: 222%;
   margin: 0 0 20px;
-  font-weight: normal; }
+  font-weight: normal;
+}
 
 @font-face {
   font-family: 'onelove';
-  src: url("media/fonts/1ove.ttf") format("ttf"), url("media/fonts/1ove.woff") format("woff"); }
+  src:  url("media/fonts/1ove.ttf") format("ttf"), 
+        url("media/fonts/1ove.woff") format("woff"); }
+
 .slimScrollBar {
   background: #fff !important; 
-width:20px !important;}
+  width: 20px !important
+}
 
 .content {
   margin: 45% 5%;
   zoom: 1.5;
 }
+
+.whobemewhenwebethree {
+  display: block;
+  background: black;
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 10px;
+}
+
+@media only screen and (max-width: 400px) {
+  .content {
+    
+  }
+}  
