@@ -1,7 +1,7 @@
 
 body {
   margin: 0;
-  font-family: onelove, arial, helvetica;
+  font-family:  onelove, courier, arial, helvetica;
   color: #000;
 }
 
@@ -33,8 +33,10 @@ h1 {
 }
 
 .content {
-  margin: 45% 5%;
-  zoom: 1.5;
+    zoom: 1.5;
+    max-width: 500px;
+    margin: 45% auto;
+    padding: 0 5%;
 }
 
 .whobemewhenwebethree {
