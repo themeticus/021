@@ -1,5 +1,10 @@
 
-body {
+
+@font-face {
+  font-family: 'onelove';
+  src:  url("media/fonts/1ove.ttf") format("ttf"), 
+        url("media/fonts/1ove.woff") format("woff"); }
+        body {
   margin: 0;
   font-family:  onelove, courier, arial, helvetica;
   color: #000;
@@ -22,11 +27,6 @@ h1 {
   font-weight: normal;
 }
 
-@font-face {
-  font-family: 'onelove';
-  src:  url("media/fonts/1ove.ttf") format("ttf"), 
-        url("media/fonts/1ove.woff") format("woff"); }
-
 .slimScrollBar {
   background: #fff !important; 
   width: 20px !important
@@ -48,6 +48,10 @@ h1 {
   top: 0;
   left: 0;
   padding: 10px;
+}
+
+.searchByTitle {
+  display: none;
 }
 
 @media only screen and (max-width: 400px) {
