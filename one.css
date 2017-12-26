@@ -1,5 +1,3 @@
-
-
 @font-face {
   font-family: 'onelove';
   src:  url("media/fonts/1ove.ttf") format("ttf"), 
@@ -10,14 +8,18 @@
   color: #000;
 }
 
-a {
-  text-decoration: none;
-  outline: none;
-  color: #000 
+body {
+  text-align:center;
 }
 
 strong, small, span, em, a {
   display: inline-block;
+}
+
+a {
+  text-decoration: none;
+  outline: none;
+  color: #000 
 }
 
 h1 {
@@ -25,11 +27,6 @@ h1 {
   font-size: 222%;
   margin: 0 0 20px;
   font-weight: normal;
-}
-
-.slimScrollBar {
-  background: #fff !important; 
-  width: 20px !important
 }
 
 .content {
@@ -48,10 +45,6 @@ h1 {
   top: 0;
   left: 0;
   padding: 10px;
-}
-
-.searchByTitle {
-  display: none;
 }
 
 @media only screen and (max-width: 400px) {
