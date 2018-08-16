@@ -49,6 +49,20 @@ h1 {
 
 @media only screen and (max-width: 400px) {
   .content {
-    
+      padding: 50% 5%;
   }
 }  
+
+
+@media only screen and (max-width: 600px) {
+  .content {
+      padding: 25% 5%;
+  }
+}  
+
+@media only screen and (max-width: 800px) {
+  .content {
+      padding: 15% 5%;
+  }
+}  
+
