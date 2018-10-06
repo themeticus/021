@@ -1,17 +1,22 @@
-var stories = document.getElementById('stories').getElementsByTagName('h1');
-var titles = document.createDocumentFragment();
+
 
 function loadTitleMenu() {  
 
+  var stories = document.getElementById('stories').getElementsByTagName('h1');
+  var titles = document.createDocumentFragment();
+
   for (var i = 0; i < stories.length; i++ ) { 
-    var newTitle = document.createElement('h1');
-    newTitle.innerText = stories[i].innerText;
-    titles.appendChild(newTitle);
+    var newTitle = document.createElement('h1')
+    newTitle.innerText = stories[i].innerText
+    newTitle.classList.add('morenu')
+    titles.appendChild(newTitle)
   }
 
   document.getElementById('searchByTitle').appendChild(titles);
   			
 }
+
+// loadTitleMenu()
 
 var editor = {
 	simple: 'data:text/html;charset=utf-8, <html contenteditable></code>',

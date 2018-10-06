@@ -66,3 +66,17 @@ h1 {
   }
 }  
 
+#searchByTitle {
+  z-index: 11111111111 !important;
+}
+
+#searchByTitle h1 {
+  display:block;
+  width: 15%;
+  height: 100px;
+  float: left;
+  font-size: 12px;
+  text-transform: uppercase;
+  text-align: left; 
+  background-color: white;
+}
