@@ -1,22 +1,56 @@
 
-
+//
 function loadTitleMenu() {  
-
-  var stories = document.getElementById('stories').getElementsByTagName('h1');
-  var titles = document.createDocumentFragment();
-
-  for (var i = 0; i < stories.length; i++ ) { 
-    var newTitle = document.createElement('h1')
+  var stories = document.getElementById('story').getElementsByTagName('h1')
+  var titles = document.createDocumentFragment()
+  for (let i = 0; i < stories.length; i++ ) { 
+    let newTitle = document.createElement('h1')
+    //let titleNo = document.createElement('small')
+    //console.log(titleNo)
+    //titleNo.innerText = (''+i+'')
     newTitle.innerText = stories[i].innerText
+    //newTitle.prepend(titleNo)
     newTitle.classList.add('morenu')
     titles.appendChild(newTitle)
+    let title = $("#story>div[data-anchor]")[i].getAttribute('data-anchor')
+    newTitle.addEventListener('click', function(){
+      $('#searchByTitle').fadeOut(200)
+      scrollToTitle($("#story>div[data-anchor="+title+"]")[0])
+    })
   }
+  document.getElementById('searchByTitle').appendChild(titles)  			
+} 
 
-  document.getElementById('searchByTitle').appendChild(titles);
-  			
+//
+function addTitleNumber() {
+
 }
 
-// loadTitleMenu()
+//
+function scrollToTitle(name) {
+  scrollToResolver(name);
+}
+
+//
+function scrollToResolver(elem) {
+  var jump = parseInt(elem.getBoundingClientRect().top * .2);
+  document.body.scrollTop += jump;
+  document.documentElement.scrollTop += jump;
+  if (!elem.lastjump || elem.lastjump > Math.abs(jump)) {
+    elem.lastjump = Math.abs(jump);
+    setTimeout(function() { scrollToResolver(elem);}, "1");
+  } else {
+    elem.lastjump = null;
+  }
+}
+
+document.getElementById('menuOverlay').addEventListener('click', function() {
+  window.scrollTo(0,0)
+  $('#searchByTitle').fadeIn(500)
+})
+
+//loadTitleMenu()
+
 
 var editor = {
 	simple: 'data:text/html;charset=utf-8, <html contenteditable></code>',
