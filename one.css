@@ -8,6 +8,10 @@
   color: #000;
 }
 
+.uc {
+   text-transform: uppercase;
+}
+
 body {
   text-align:center;
 }
