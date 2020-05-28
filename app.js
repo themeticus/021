@@ -3,13 +3,14 @@
 function loadTitleMenu() {  
   var stories = document.getElementById('story').getElementsByTagName('h1')
   var titles = document.createDocumentFragment()
-  for (let i = 0; i < stories.length; i++ ) { 
+  for (let i = 1; i < stories.length; i++ ) { 
     let newTitle = document.createElement('h1')
-    //let titleNo = document.createElement('small')
+    let titleNo = document.createElement('small')
     //console.log(titleNo)
-    //titleNo.innerText = (''+i+'')
+    titleNo.innerText = (''+i+'')
     newTitle.innerText = stories[i].innerText
-    //newTitle.prepend(titleNo)
+    newTitle.prepend(titleNo)
+    //console.log(newTitle)
     newTitle.classList.add('morenu')
     titles.appendChild(newTitle)
     let title = $("#story>div[data-anchor]")[i].getAttribute('data-anchor')
@@ -17,16 +18,18 @@ function loadTitleMenu() {
       $('#searchByTitle').fadeOut(200)
       scrollToTitle($("#story>div[data-anchor="+title+"]")[0])
     })
+  
+  document.getElementById('searchByTitle').appendChild(titles)
+  document.getElementById('menuOverlay').addEventListener('click', function() {
+    window.scrollTo(0,0)
+    $('#searchByTitle').fadeIn(500)
+  })
+
   }
-  document.getElementById('searchByTitle').appendChild(titles)  			
+    			
 } 
 
-//
-function addTitleNumber() {
-
-}
-
-//
+//  
 function scrollToTitle(name) {
   scrollToResolver(name);
 }
@@ -38,20 +41,19 @@ function scrollToResolver(elem) {
   document.documentElement.scrollTop += jump;
   if (!elem.lastjump || elem.lastjump > Math.abs(jump)) {
     elem.lastjump = Math.abs(jump);
-    setTimeout(function() { scrollToResolver(elem);}, "1");
+    setTimeout(function() { scrollToResolver(elem)}, 30);
   } else {
     elem.lastjump = null;
   }
 }
 
-document.getElementById('menuOverlay').addEventListener('click', function() {
+function showTitleMenu() {
   window.scrollTo(0,0)
-  $('#searchByTitle').fadeIn(500)
-})
-
-//loadTitleMenu()
+  $('#searchByTitle').fadeIn(1000)
+}
 
 
+//
 var editor = {
 	simple: 'data:text/html;charset=utf-8, <html contenteditable></code>',
 	base64: 'data:text/html;base64,PGh0bWwgY29udGVudGVkaXRhYmxlPg==',

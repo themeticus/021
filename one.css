@@ -33,6 +33,11 @@ h1 {
   font-weight: normal;
 }
 
+h1>small {
+  display: block;
+  float: right;
+}
+
 ._oo_menu {
 
 }
@@ -80,7 +85,7 @@ h1 {
   top: 0;
   left: 0;
   background: rgba(215, 134, 31, 1);
-  display: none;
+  /*display: none;*/
 }
 
 #searchByTitle h1 {
