@@ -5,10 +5,68 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<meta name="description" content="stories of life and love from cape town">
-	<meta name="keywords" content="1ove, hugh mosno, 021, cape flats, jy wiet mos">
+	<meta name="keywords" content="1ove, hugh mosno, 021, cape flats stories, cape town stories, kak short stories, jy wiet mos">
 	<meta name="thumbnail" content="media/img/1ove.ico" />
 	<link rel="stylesheet" href="one.css" />
 	<link rel="shortcut icon" type="image/x-icon" href="media/img/1ove.ico">   
+	<style type="text/css">
+						/* Overlay style */
+				.overlay {
+				  position: fixed;
+				  width: 100%;
+				  height: 100%;
+				  top: 0;
+				  left: 0;
+				  background: rgba(153, 204, 51, 0.9);
+				}
+
+				/* Overlay closing cross */
+				.overlay .overlay-close {
+				  width: 80px;
+				  height: 80px;
+				  position: absolute;
+				  right: 20px;
+				  top: 20px;
+				  overflow: hidden;
+				  border: none;
+				  background-color: orange;
+				  text-indent: 200%;
+				  color: transparent;
+				  outline: none;
+				  z-index: 100;
+				}
+
+
+
+				.storycontainer {
+				  background: #fff;
+				  -webkit-transition: -webkit-transform 0.5s;
+				  transition: transform 0.5s;
+				}
+
+				.storycontainer.overlay-open {
+				  -webkit-transform: scale(0.8);
+				  transform: scale(0.8);
+				}
+
+				.overlay-contentscale {
+				  visibility: hidden;
+				  -webkit-transform: translateY(100%);
+				  transform: translateY(100%);
+				  -webkit-transition: -webkit-transform 0.5s, visibility 0s 0.5s;
+				  transition: transform 0.5s, visibility 0s 0.5s;
+				}
+
+				.overlay-contentscale.open {
+				  visibility: visible;
+				  -webkit-transform: translateY(0%);
+				  transform: translateY(0%);
+				  -webkit-transition: -webkit-transform 0.5s;
+				  transition: transform 0.5s;
+				}
+
+
+	</style>
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-77789472-1"></script>
 	<script>
 	  window.dataLayer = window.dataLayer || [];
@@ -17,13 +75,13 @@
 	  gtag('config', 'UA-77789472-1');
 	</script>
 </head>
-<body> 
+<body onload="loadTitleMenu()"> 
 	
 <!-- beep -->
-<div id="searchByTitle"></div>
+<div id="searchByTitle" style="display: none;"></div>
 
 <div style="width: 200px; text-align: right; margin: 10px 20px 0px 0; top: 0; right: 0; position: absolute;     z-index: 99999;">
-	<small style="font-family: courier"><a href="#">in association with</a></small>
+	<small style="font-family: courier"><a href="#">gekoppel with</a></small>
 	<a href="https://themeticus.github.io/onelove/" target="_blank"><img src="media/img/onelove.png" width="150px" /></a>
 </div>
 
@@ -36,7 +94,7 @@
     /**/
     top: 0;
     left: 0;font-size: 1.2rem;opacity: .9">		<div data-anchor="cover">
-			<bold class="whobemewhenwebethree">021&nbsp;&nbsp;by&nbsp;&nbsp;HUGH MOSNO</bold><div id="menuOverlay" style="display: none;" onclick="loadTitleMenu()">&nbsp;</div>
+			<bold class="whobemewhenwebethree">021&nbsp;&nbsp;by&nbsp;&nbsp;HUGH MOSNO</bold><div id="menuOverlay" onclick="showTitleMenu()">&nbsp;</div>
 		</div>	</div>
 		<small style=" font-family: monospace, courier; position: absolute;bottom: 10px; left: 0;color: #999 ">&nbsp;&copy;&nbsp;<a href="https://en.wikipedia.org/wiki/Marie_Tharp" target="_blank" style="text-decoration: none;color: inherit;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">marie tharp</a></small>		
 		<small style=" display: none; font-family: monospace, courier; position: absolute;bottom: 10px; left: 0;color: #999 ">&nbsp;&copy;&nbsp;<a href="https://www.appolis.co.za/#about-section" target="_blank" style="text-decoration: none;color: inherit;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">lindsey appolis</a></small>
@@ -54,19 +112,53 @@
 
 
 
-		<small style="text-transform: uppercase; font-size: 14px;margin-top: 500px;">
- <span class="small-cap">everyone has a voice<br/>this is mine<br/>find yours</span>
-			</small><br/><br/><br/><br/><br/><br/><br/><br/>
 
-	<div id="story">
+	<small style="text-transform: uppercase; font-size: 14px;margin-top: 500px;">
+ 	<span class="small-cap">everyone has a voice<br/>this is mine<br/>find yours</span>
+	</small><br/><br/><br/><br/><br/><br/><br/><br/>
 
-		<div >
-		  <div class="content" >
-		     <p style="text-align:center;">
-		        <span class="small-cap"><br/></span>
-		     </p>
-		  </div>
-		</div>		
+	<div class="storycontainer" id="story">
+
+
+		<div data-anchor="schools-of-thought">
+			<div class="content">
+				<h1>schools of thought</h1><br />
+				<p>those who don't know<br/>
+					need something to believe<br/>
+				<small><sup style="font-size: 8px; color:#eaeaea">H M</sup></small>
+			</div>
+		</div>
+
+		<div data-anchor="old-school">
+			<div class="content">
+				<h1>old school</h1><br />
+				<p>I go to the forest to live deliberately<br/>
+					to see if I can learn what life has to teach<br/>
+					and not when I come to die<br/>
+					discover that I have not lived<br/><br/>
+				<small><sup style="font-size: 8px; color:#eaeaea">H M</sup></small>
+			</div>
+		</div>
+
+		<div data-anchor="uncharted">
+			<div class="content">
+				<h1>uncharted</h1><br />
+				<p>	<i>the abolishment of slavery means nothing...</i><br/>
+					only when we abolish the concept of mine and yours<br/>
+					only <i>then</i> are we truly free from slavery<br/><br/>
+				<small><sup style="font-size: 8px; color:#eaeaea">H M</sup></small>
+			</div>
+		</div>
+
+		<div data-anchor="truth-be-sold">
+			<div class="content">
+				<h1>truth be sold</h1><br />
+				<p><i>inside of oneness</i><br/>
+					love knows no language &amp;<br/>
+					truth has no home<br/><br/>
+				<small><!-- <button id="trigger-overlay" type="button">back story</button> by  --><sup style="font-size: 8px; color:#eaeaea">H M</sup></small>
+			</div>
+		</div>
 
 		<div data-anchor="purse-pective">
 			<div class="content">
@@ -244,19 +336,6 @@
 			</div>
 		</div>
 
-		<div class="flagged" data-anchor="the-journey">
-			<div class="content">
-				<h1>the journey</h1><br />
-				<p><i><b>"let me show you what love can do"</b></i><br/>
-					and he started walking...<br/>
-					she knew where he was headed<br/>
-					but only he knew that he wanted to get there<br/>
-					all she could do was watch in amazement<br/>
-					as he marched fearlessly into the silence<br/><br/>
-				<small><sup style="font-size: 8px; color:#eaeaea">H M</sup></small>
-			</div>
-		</div>
-
 		<div data-anchor="the-flip-side">
 			<div class="content">
 				<h1>the flip side</h1><br />
@@ -299,31 +378,6 @@
 				<p>	healing is seeing the meaning in the feeling<br/>
 					and the bulk of that, is letting go<br/><br/>
 					<small><sup style="font-size: 8px; color:#eaeaea">H M</sup></small>
-			</div>
-		</div>
-
-		<div class="flagged" data-anchor="alan-watts">
-			<div class="content">
-				<h1>...</h1><br />
-				<p>	lets suppose that you were able every night<br/>
-					to dream any dream you wanted to dream<br/>
-					and you would naturally as you began<br/>
-					on this adventure of dreams<br/>
-					you would fulfill all your wishes<br/>
-					you would have <b>every</b> kind of pleasure<br/>
-					you can conceive of<br/>
-					and after several nights you would say<br/><br/>	
-					<i>"well that was pretty great"</i><br/><br/>	
-					but now lets have a surprise<br/>
-					lets have a dream which isn't under control<br/>
-					where something is going to happen to me<br/>		 
-					that I don't know what it's gonna be<br/>
-					then you would get more and more adventurous<br/>
-					and you would make further and further out gambles<br/>
-					as to what you would dream<br/>
-					and finally you would dream<br/>
-					where you are now<br/><br/>
-					<small><sup style="font-size: 8px; color:#eaeaea">A W</sup></small>
 			</div>
 		</div>
 
@@ -815,9 +869,10 @@
 			</div>
 		</div>
 
-		<div class="flagged" data-anchor="drama-daan">
+		<div data-anchor="drama-daan">
 			<div class="content">
-				<h1>same witch<br/>different bitch</h1><br />
+				<h1>same witch <br />
+				different bitch</h1><br />
 				<p>	the drama queen<br/>
 					appearing anywhere and at any time<br/>
 					using anyone as her vehicle<br/>
@@ -901,23 +956,6 @@
 			</div>
 		</div>
 
-		<div class="flagged" data-anchor="default-settings">
-			<div class="content">
-				<h1>default settings</h1><br />
-				<p>alleverything I am<br/>
-					is the love of my parents<br/>
-					everything I become<br/>
-					is the love I instill in my self<br/><br/>
-
-					<small>
-					replace love, with any word<br/>
-					&amp; that becomes your world<br/><br/>
-				</small>
-
-				</p>
-			</div>
-		</div>
-
 		<div data-anchor="my-everything">
 			<div class="content">
 				<h1>my everything</h1><br />
@@ -995,22 +1033,6 @@
 						allow the body<br/> 
 						to take the soul<br/> 
 						for a poes<br/>
-				</p>
-			</div>
-		</div>
-
-		<div class="flagged" data-anchor="the-dreamix">
-			<div class="content">
-				<h1>the dreamix</h1><br />
-				<p>I asked God via email<br/><br/>
-					so, you're on a stage with a microphone<br/>
-					and standing in front of you<br/>
-					are all the billions of humans of the planet<br/>
-					you have their full attention<br/>
-					you need to leave them with some thoughts, anything...<br/>
-					what would you tell them?<br/><br/>
-					and he replied saying<br/><br/>
-					<i>I've got you...</i>
 				</p>
 			</div>
 		</div>
@@ -1380,35 +1402,6 @@
 					I mean, what could I create <small>(today)</small><br/>
 					that will not need<br/>
 					to be recreated <small>(tomorrow)</small><br/>
-				</p>
-			</div>
-		</div>
-
-		<div class="flagged" data-anchor="seeing-your-self-in-others">
-			<div class="content">
-				<h1>seeing your self in others</h1><br />
-				<p>explaining the neurosis to your self is hard<br/>
-						...<br/>
-						the formula it seems <br/>
-						needs to be written out<br/>
-						examined <br/>
-						and then <br/>
-						pieced back together<br/>
-						and then explained to sulaiman in layman <br/>
-						exactly how things seem to be working ceaselessly<br/>
-						behind the scenes<br/>
-						...<br/>
-						sulaiman is thinking about <br/>
-						what kauther <br/>
-						did do<br/>
-						didn't do<br/>
-						could do<br/>
-						had done with another bru before she evens met him<br/>
-						sulaiman is thinking about all the ways his wife could possibly cheat on him<br/>
-						he fantasizes regretfully about thoughts that have no basis in his reality<br/>
-						and he spends fifty percent of his thought capacity on this useless practice<br/>
-						kept in a loop laced with insecurity and misunderstanding of self<br/>
-						he is my brother and we are experiencing this one love together<br/>
 				</p>
 			</div>
 		</div>
@@ -2039,21 +2032,6 @@
 			</div>
 		</div>
 
-		<div class="flagged" data-anchor="reading-between">
-			<div class="content">
-				<h1>reading between</h1></br />
-				<p>words still need to be translated &amp; understood<br/>
-					but feeling is shared without translation<br/>
-					feeling is the truest form of knowing<br/>
-					no sounds, no letters, no nothing...<br/>
-					just the subtle yet ever present vibrations<br/>
-					that radiates from every living thing...<br/>
-					words will never be enough<br/>
-					<i>never</i>
-				</p><br />
-			</div>
-		</div>
-
 		<div data-anchor="human-analytics-101">
 			<div class="content">
 				<h1>human analytics 101</h1></br />
@@ -2289,28 +2267,6 @@
 					its always something you need to feel out</br />
 					words get in the way sometimes</br />
 					but love feels the same everyday</br />
-						</p><br />
-			</div>
-		</div>
-
-		<div class="flagged" data-anchor="the-doorways-be-infinite">
-			<div class="content">
-				<h1>the doorways be infinite</h1></br />
-				<p>marijuana,<br/>
-					its not that its getting you high,<br/>
-					its only showing you what your body can do...<br/>
-					your body can also <br/>
-					take direct instruction<br/>
-					from the will of your attention...<br/>
-					but focus is a muscle<br/>
-					that needs to be exercised daily<br/>
-					and it is only through feeling<br/>
-					that we truly know...<br/>
-					love is a oneness<br/>
-					that needs to be felt to be known<br/>
-					and when we understand through feeling<br/>
-					the lights go on &amp; love becomes visible<br/> 
-					in every atom of the eternal somethingverse<br/>
 						</p><br />
 			</div>
 		</div>
@@ -2761,14 +2717,7 @@
 		      <br />
 		   </div>
 		</div>
-		<div class="flagged" data-anchor="koppel">
-		   <div class="content">
-		      <h1>koppel</h1>
-		      </br />
-		      <p>most people it seems don’t really wanna be sticking around earth for too long, they ride their body, mind and spirit into the ground in a matter of decades and even more people have already given themselves an expiry year sub or consciously...  not me bra, jus, I smaak to be here, I graan this jol...  what a blessing it is to bear witness to the now, to be able to feel all the stuff that a human can feel, its kak that you only get one life, but I think its jus that you also only get one love</p>
-		      <br />
-		   </div>
-		</div>
+
 		<div data-anchor="bikology">
 		   <div class="content">
 		      <h1>bikology</h1>
@@ -2791,14 +2740,7 @@
 		      <br />
 		   </div>
 		</div>
-		<div class="flagged" data-anchor="shoulder-to-shoulder">
-		   <div class="content">
-		      <h1>shoulder to shoulder</h1>
-		      </br />
-		      <p><strong>I grew up in a mom-fearing home</strong> and only when I become a giant boy did I meet the girl behind my mom, and the boy behind my dad...  I wish for all young humans, to have encouragement and inspiration as regularly as breakfast and dinner and to be showered with loving intention, all the beats of your heart</p>
-		      <br />
-		   </div>
-		</div>
+
 		<div data-anchor="1989">
 		   <div class="content">
 		      <h1>1989 – PILOT: s1 e1: sara, protector of ojila, daughter of kiel &amp; oni</h1>
@@ -3047,7 +2989,7 @@
 		   <div class="content">
 		      <h1>brothers in arms</h1>
 		      </br />
-		      <p>pang joined the 26's when he was about 16... his naked body bares the testament to his journey. when he left the number, they cut out the numbered tatoo from his chest. he’s been married a few times, has 5 kids from several woman and is a builder by trade. sometimes we still connect to play some fifa, with a joint and some snacks. its a pretty chilled environment, with kids running around and vibrant conversations within earshot. I asked a friend the other day "would you take on another man’s son and love him as your own?" his answer was "no", for most men this is really hard but for pang this is not easy, its natural. his love far outweighs his most evil encounters. a rare breed of human, able to foster care and love to any human, irrespective, and for all his shortcomings, this single trait makes him a giant, among the best of humans</p>
+		      <p>pang joined the 27's when he was about 16... his naked body bares the testament to his journey. when he left the number, they cut out the numbered tatoo from his chest. he’s been married a few times, has 5 kids from several woman and is a builder by trade. sometimes we still connect to play some fifa, with a joint and some snacks. its a pretty chilled environment, with kids running around and vibrant conversations within earshot. I asked a friend the other day "would you take on another man’s son and love him as your own?" his answer was "no", for most men this is really hard but for pang this is not easy, its natural. his love far outweighs his most evil encounters. a rare breed of human, able to foster care and love to any human, irrespective, and for all his shortcomings, this single trait makes him a giant, among the best of humans</p>
 		      <br />
 		   </div>
 		</div>
@@ -3115,31 +3057,7 @@
 		      <br />
 		   </div>
 		</div>
-		<div class="flagged" data-anchor="the-sound-of-words">
-		   <div class="content">
-		      <h1>the sound of words</h1>
-		      </br />
-		      <p>real value is hard to find... most of the information you consume is gossip, he-say she-say they-say they-do sorta vibes. what real information came by your way today? not something repurposed, regurgitated, reconditioned, redesigned or repackaged, new information, an insight even, not into a demographic or a niche, but an insight into it all</p>
-		      <br />
-		   </div>
-		</div>
 
-		<div class="flagged" data-anchor="the-lying-king">
-		   <div class="content">
-		      <h1>the lying king</h1>
-		      </br />
-		      <p>lions are poes mooi, have you ever seen one? up close? fucking poes mooi, any african lion alive today is part of a long line of points, honing their lineage for almost 1 million years, the lion has more respect and is more at one than more than 5 billion single human beings, the lion is singled out because it is a commonly used to depict strength. strength is a beautiful trait, which all lions possess, what desirable trait will the overwhelming greatness of humans come to represent?</p>
-		      <br />
-		   </div>
-		</div>
-		<div  class="flagged" data-anchor="the-hayflick-limit">
-		   <div class="content">
-		      <h1>the hayflick limit</h1>
-		      </br />
-		      <p>about 50 000 years ago, how did anyone know how old they were? how did they keep "time" as we have been bred to know it... it was mostly just sunrise and sunset, sure most had man-made time-keeping systems but they didn’t have information systems of records that we can use to backtrack into time to accurately gauge how the average life-expectancy has truly been affected over the course of time. the default settings for humans are quite remarkable, given the right amount of food, light, water and exercise, humans can grow and live to 500 years and more, far-fetched yes, but only to the 100-year perspective. the 100-year perspective cannot see too far into the future and too far into the past, they see mostly everything that revolves around the time of their lifespan, within the allocated 100 years they’ve been led to believe is possible in one of these human bodies. visit distant planets, go 100 000 years into the future, travel back in time, live a thousand lives and then come back and tell me that humans living to be 500 years old is impossible, show me a human unwilling to entertain such notions and I will show you a human in fear of his own beliefs being shattered by the noise of limitless possibility</p>
-		      <br />
-		   </div>
-		</div>
 		<div data-anchor="anonymous">
 		   <div class="content">
 		      <h1>anonymous</h1>
@@ -3818,6 +3736,13 @@
 
 	</div>
 
+	<div class="overlay overlay-contentscale">
+		<button type="button" class="overlay-close">Close</button>
+		
+		<div id="backstory"></div>
+		beeeeeeeeeeeeeeeeeeeeeeeep
+	</div>
+
 		<div >
 		  <div class="content" >
 		     <p style="text-align:center;">
@@ -3835,7 +3760,9 @@
 		</div>
 		
 		<script src="jquery-3.2.1.js"></script>
-		<script src="app.js"></script>
+		<script src="app.js">
+
+		</script>
 
 </div>
 </body>
