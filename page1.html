@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Products SPA</title>
+</head>
+<body>
+  <div id="app">
+    <!-- Navigation bar -->
+    <nav>
+      <ul>
+        <li><a href="#" onclick="showHome()">Home</a></li>
+        <li><a href="#" onclick="showProducts()">Products</a></li>
+      </ul>
+    </nav>
+
+    <!-- Main content area -->
+    <div id="main-content">
+      <!-- Home view -->
+      <div id="home-view" class="view">
+        <h1>Welcome to our SPA!</h1>
+        <p>This is a single-page application demonstrating dynamic product rendering.</p>
+      </div>
+
+      <!-- Products view -->
+      <div id="products-view" class="view">
+        <h1>Our Products</h1>
+        <div id="product-list">
+          <!-- Product items will be dynamically inserted here -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Sample dynamic products array
+    const products = [
+      { name: "Jersey", price: "R299", description: "Designed for outdoors" },
+      { name: "Football", price: "R199", description: "Official size and weight" },
+      { name: "Basketball", price: "R149", description: "Indoor/outdoor composite leather" },
+      { name: "Running Shoes", price: "R399", description: "Breathable and lightweight" },
+      { name: "Tennis Racket", price: "R249", description: "Graphite construction for power and control" },
+      { name: "Golf Clubs", price: "R799", description: "Complete set with bag included" },
+      { name: "Swimming Goggles", price: "R79", description: "Anti-fog and UV protection" }
+    ];
+
+    // Function to render products
+    function renderProducts() {
+      const productList = document.getElementById("product-list");
+      productList.innerHTML = ""; // Clear previous content
+
+      products.forEach(product => {
+        const productItem = document.createElement("div");
+        productItem.classList.add("product-item");
+        productItem.innerHTML = `
+          <h2>${product.name}</h2>
+          <p>Price: ${product.price}</p>
+          <p>Description: ${product.description}</p>
+        `;
+        productList.appendChild(productItem);
+      });
+    }
+
+    // Function to show home view
+    function showHome() {
+      document.getElementById("home-view").style.display = "block";
+      document.getElementById("products-view").style.display = "none";
+    }
+
+    // Function to show products view
+    function showProducts() {
+      document.getElementById("home-view").style.display = "none";
+      document.getElementById("products-view").style.display = "block";
+      document.getElementById("products-view").classList.add("slide-in"); // Apply slide-in animation
+      renderProducts();
+    }
+
+    // Initially show home view
+    showHome();
+  </script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    nav ul li {
+      display: inline;
+      margin-right: 20px;
+    }
+
+    .view {
+      display: none;
+    }
+
+    .product-item {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .product-item h2 {
+      margin-top: 0;
+    }
+
+    /* Slide-in animation */
+    @keyframes slideIn {
+      from {
+        transform: translateX(100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    .slide-in {
+      animation: slideIn 0.5s forwards;
+    }
+  </style>
+</body>
+</html>

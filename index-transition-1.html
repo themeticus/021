@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page Transition Example</title>
+
+<style>
+    /* Define transition effect for the entire document */
+    body {
+        overflow: hidden; /* Prevent horizontal scrolling */
+        transition: transform 0.5s ease-in-out;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Define different states of the document */
+    body[data-state="page1"] {
+        transform: translateX(0%);
+    }
+
+    body[data-state="page2"] {
+        transform: translateX(-100%);
+    }
+
+    body[data-state="page3"] {
+        transform: translateX(-200%);
+    }
+
+    body[data-state="page4"] {
+        transform: translateX(-300%);
+    }
+
+    body[data-state="page5"] {
+        transform: translateX(-400%);
+    }   
+
+    /* Ensure sections take up full viewport width and height */
+    section {
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden; /* Hide content that overflows */
+        position: absolute; /* Position sections absolutely */
+        top: 0; /* Position sections at the top */
+        left: 0; /* Position sections at the left */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    /* Center content vertically and horizontally */
+    .content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    /* Basic button styles */
+    button {
+        padding: 10px 20px;
+        cursor: pointer;
+        background-color: #3498db;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+    }
+
+    /* Styles for the product links */
+    .product-link {
+        display: block;
+        margin-bottom: 10px;
+        text-decoration: none;
+        color: #333;
+    }
+</style>
+</head>
+<body>
+
+    <div data-state="page1">
+    <!-- Dynamically generate sections for each product -->
+    <div id="sections-container">
+        <script>
+            const products = [
+                { title: 'Product 1', description: 'Description for Product 1' },
+                { title: 'Product 2', description: 'Description for Product 2' },
+                { title: 'Product 3', description: 'Description for Product 3' },
+                { title: 'Product 4', description: 'Description for Product 4' },
+                { title: 'Product 5', description: 'Description for Product 5' },
+                { title: 'Product 6', description: 'Description for Product 6' }
+            ];
+
+            // Loop through each product and dynamically generate a section for it
+            products.forEach((product, index) => {
+                const nextPageIndex = (index + 1) % products.length; // Get the index of the next product or back to the first product
+
+                const section = document.createElement('section');
+                section.style.transform = `translateX(${index * 100}%)`;
+                section.innerHTML = `
+                    <div class="content">
+                        <h2>${product.title}</h2>
+                        <p>${product.description}</p>
+                        <button onclick="transitionTo('page${nextPageIndex + 1}')">Next Page</button>
+                    </div>
+                `;
+                document.getElementById('sections-container').appendChild(section);
+            });
+
+            function transitionTo(newState) {
+                // Set the data-state attribute of the body to trigger the transition effect
+                document.body.setAttribute('data-state', newState);
+            }
+        </script>
+    </div>
+    </div>
+
+    <!-- New div with links to all products -->
+    <div id="product-links">
+        <script>
+            // Create links to all products
+            const productLinks = document.createElement('div');
+            productLinks.classList.add('all');
+            products.forEach((product, index) => {
+                const link = document.createElement('a');
+                link.href = '#';
+                link.classList.add('product-link');
+                link.textContent = `Product ${index + 1}`;
+                link.onclick = () => transitionTo(`page${index + 1}`);
+                productLinks.appendChild(link);
+            });
+            document.body.appendChild(productLinks);
+        </script>
+    </div>
+</body>
+</html>

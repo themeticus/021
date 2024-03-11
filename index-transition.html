@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page Transition Example</title>
+
+<style>
+    /* Define transition effect for the entire document */
+    body {
+        overflow-x: hidden; /* Prevent horizontal scrolling */
+        transition: transform 0.5s ease-in-out;
+        margin: 0;
+        padding: 0;
+        position: relative; /* Ensure positioning for absolute children */
+    }
+
+    /* Define different states of the document */
+    body[data-state="page1"] {
+        transform: translateX(0%);
+    }
+
+    body[data-state="page2"] {
+        transform: translateX(-100%);
+    }
+
+    body[data-state="page3"] {
+        transform: translateX(-200%);
+    }
+
+    body[data-state="page4"] {
+        transform: translateX(-300%);
+    }
+
+    body[data-state="page5"] {
+        transform: translateX(-400%);
+    }
+
+    /* Ensure sections take up full viewport width and height */
+    section {
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden; /* Hide content that overflows */
+        position: absolute; /* Position sections absolutely */
+        top: 0; /* Position sections at the top */
+        left: 0; /* Position sections at the left */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    /* Center content vertically and horizontally */
+    .content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    /* Basic button styles */
+    .next-button {
+        position: sticky;
+        bottom: 20px;
+        right: 20px;
+        padding: 10px 20px;
+        cursor: pointer;
+        background-color: #3498db;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        z-index: 999;
+    }
+</style>
+</head>
+<body data-state="page1">
+    <button class="next-button" onclick="nextPage()">Next Page</button>
+    <!-- Dynamically generate sections for each product -->
+    <div class="sections-container">
+        <script>
+            const products = [
+                { title: 'Product 1', description: 'Description for Product 1' },
+                { title: 'Product 2', description: 'Description for Product 2' },
+                { title: 'Product 3', description: 'Description for Product 3' },
+                { title: 'Product 4', description: 'Description for Product 4' },
+                { title: 'Product 5', description: 'Description for Product 5' }
+            ];
+
+            // Loop through each product and dynamically generate a section for it
+            products.forEach((product, index) => {
+                const nextPageIndex = (index + 1) % products.length; // Get the index of the next product or back to the first product
+
+                document.write(`
+                    <section style="transform: translateX(${index * 100}%);">
+                        <div class="content">
+                            <h2>${product.title}</h2>
+                            <p>${product.description}</p>
+                        </div>
+                    </section>
+                `);
+            });
+        </script>
+    </div>
+    
+    <!-- Next Page button -->
+    
+
+    <script>
+        let currentPageIndex = 0;
+        const sections = document.querySelectorAll('section');
+        
+        function nextPage() {
+            currentPageIndex = (currentPageIndex + 1) % sections.length;
+            updatePageState();
+        }
+
+        function updatePageState() {
+            const newState = `page${currentPageIndex + 1}`;
+            document.body.setAttribute('data-state', newState);
+        }
+
+        updatePageState(); // Update initial page state
+    </script>
+</body>
+</html>
